@@ -1,69 +1,118 @@
+:root {
+  --team-color: #4FC3F7;
+  --dark-bg: #121212;
+  --light-bg: #f9f9f9;
+  --text-color: #222;
+  --accent: #00bcd4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.3s;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
-:root {
-  --bg: #fff;
-  --text: #111;
-  --primary: #4e9dff;
-  --card-bg: #f3f3f3;
-}
-
-.dark-mode {
-  --bg: #111;
-  --text: #eee;
-  --card-bg: #222;
-}
-
-.header {
-  background: var(--primary);
+header {
+  background: var(--team-color);
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+.navbar nav a {
+  margin: 0 0.8rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.hero, .about, .features, .gallery, .newsletter {
-  padding: 2rem;
+.navbar h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url('/assets/images/hero-placeholder.jpg') center/cover no-repeat;
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.hero .btn {
+  margin-top: 1rem;
+  background: var(--team-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.info-section {
+  padding: 3rem 2rem;
   text-align: center;
 }
 
-.cards, .gallery-grid {
+.card-container {
   display: flex;
+  gap: 1.5rem;
   justify-content: center;
-  gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .card {
-  background: var(--card-bg);
-  padding: 1rem;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.hover-effect {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 300px;
   transition: transform 0.3s ease;
 }
-.hover-effect:hover {
-  transform: scale(1.1);
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--team-color);
+}
+
+.card p {
+  padding: 0 1rem 1.2rem;
+  font-size: 0.95rem;
 }
 
 footer {
+  background: var(--team-color);
+  color: white;
   text-align: center;
   padding: 1rem;
-  background: var(--primary);
-  color: white;
+  font-size: 0.9rem;
 }
