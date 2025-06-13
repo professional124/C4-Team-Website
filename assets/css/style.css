@@ -115,4 +115,19 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark header,
+body.dark footer {
+  background: #1f1f1f;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: #fff;
+}
+
 }
