@@ -5,46 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chill 4 Eva | Home</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <script defer src="assets/js/darkmode.js"></script>
-  <link rel="icon" href="assets/images/favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Chill 4 Eva <span class="tag">[C4]</span></h1>
+  <header class="header">
+    <img src="assets/images/logo.png" alt="Chill 4 Eva Logo" class="logo" />
     <nav>
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join Us</a>
-      <a href="rules.html">Rules</a>
-      <a href="tracker.html">Tracker</a>
-      <a href="contact.html">Contact</a>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="tracker.html">Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="dark-mode-toggle">🌓</button></li>
+      </ul>
     </nav>
-    <button id="dark-mode-toggle">Toggle Dark Mode</button>
   </header>
 
-  <section class="hero">
-    <img src="assets/images/placeholder-hero.jpg" alt="Team Hero Image"/>
-    <h2>Welcome to Chill 4 Eva</h2>
-    <p>Together we race, chill, and dominate. Join the fastest-growing Nitro Type team today!</p>
+  <section class="hero" data-aos="fade-up">
+    <h1>Welcome to Chill 4 Eva</h1>
+    <p>The most chill, consistent, and rewarding team on Nitro Type.</p>
+    <img src="https://via.placeholder.com/900x300" alt="Hero Image" class="hero-img">
   </section>
 
-  <section class="cards">
-    <div class="card">
-      <h3>Active Community</h3>
-      <p>We race together, help each other grow, and have weekly competitions.</p>
-    </div>
-    <div class="card">
-      <h3>Weekly Rewards</h3>
-      <p>Earn NTC every week based on your race performance. 100 races = 100k NTC!</p>
-    </div>
-    <div class="card">
-      <h3>Elite Members</h3>
-      <p>Meet some of the top typists in the game. Grow your rep with C4!</p>
+  <section class="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>[Placeholder about your team mission, vibe, or motto]</p>
+  </section>
+
+  <section class="features" data-aos="fade-up">
+    <h2>Why Join Us?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Weekly Comps</h3>
+        <p>Earn NT$ by racing actively — rewards every Friday.</p>
+      </div>
+      <div class="card">
+        <h3>Loyalty Rewards</h3>
+        <p>Gold giveaways or NT$ bonuses for long-term racers.</p>
+      </div>
+      <div class="card">
+        <h3>Clean Team</h3>
+        <p>No bots, no stress — just fair play and fun racing.</p>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Chill 4 Eva [C4] — Drive Fast. Chill Hard.</p>
+  <section class="gallery" data-aos="zoom-in">
+    <h2>Team Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/200" alt="Car 1" class="hover-effect">
+      <img src="https://via.placeholder.com/200" alt="Car 2" class="hover-effect">
+      <img src="https://via.placeholder.com/200" alt="Car 3" class="hover-effect">
+    </div>
+  </section>
+
+  <section class="newsletter" data-aos="fade-up">
+    <h2>Subscribe for Updates</h2>
+    <form action="https://YOUR_GOOGLE_FORM_URL_HERE" method="POST" target="_blank">
+      <input type="email" name="email" placeholder="Your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Chill 4 Eva [C4] | Tiny Team, Big Vibes.</p>
+    <p>Website by the C4 Dev Team</p>
   </footer>
+
+  <script>AOS.init();</script>
 </body>
 </html>
