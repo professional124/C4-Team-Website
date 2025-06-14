@@ -2,20 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact | Chill 4 Eva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header class="header">...</header>
-  <main data-aos="fade-up">
+  <header class="main-header">
+    <div class="logo">[C4] Chill 4 Eva</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="team-leaders.html">Team Leaders</a>
+      <a href="join.html">Join</a>
+      <a href="rules.html">Rules</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-form" data-aos="fade-up">
     <h1>Contact & Support</h1>
-    <p>Use the form below or join our Discord server: <a href="#">[Your Discord Invite]</a></p>
-    <form action="https://YOUR_GOOGLE_FORM_URL_HERE" method="POST" target="_blank">
-      <input type="text" name="name" placeholder="Your Name" />
-      <input type="email" name="email" placeholder="Your Email" />
-      <textarea name="message" placeholder="Message"></textarea>
-      <button type="submit">Send</button>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your message here..." required></textarea>
+      <button type="submit">Send Message</button>
     </form>
-  </main>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chill 4 Eva | [C4] Team</p>
+  </footer>
 </body>
 </html>
