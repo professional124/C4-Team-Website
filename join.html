@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Us | Chill 4 Eva</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join | Chill 4 Eva</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo">[C4] Chill 4 Eva</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join</a>
-      <a href="rules.html">Rules</a>
-      <a href="tracker.html">Tracker</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <section class="content">
-    <h1>Join Chill 4 Eva</h1>
-    <p>Fill out the application form and show us your racer link + stats.</p>
-    <form action="#" method="POST">
-      <input type="text" placeholder="Your Nitro Type Username" required />
-      <input type="url" placeholder="Racer Profile Link" required />
-      <textarea placeholder="Why do you want to join?" required></textarea>
-      <button type="submit">Submit Application</button>
-    </form>
-  </section>
+<header class="main-header">
+  <div class="logo">[C4] Chill 4 Eva</div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="team-leaders.html">Team Leaders</a>
+    <a href="join.html" class="active">Join</a>
+    <a href="rules.html">Rules</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <footer>
-    <p>© 2025 Chill 4 Eva [C4]</p>
-  </footer>
+<div class="announcement" data-aos="fade-down">
+  🚨 Weekly Comp Live: Earn $100k for every 100 races past 150! Stay sharp and race hard! 🚨
+</div>
+
+<section class="join-section" data-aos="fade-up">
+  <h2>Join Chill 4 Eva</h2>
+  <p>Ready to race with us? Here's how to join:</p>
+
+  <ol>
+    <li>Make sure you meet the weekly minimum of 150 races.</li>
+    <li>Submit your Nitro Type racer link below.</li>
+    <li>Follow our team rules and be active in our Discord community.</li>
+  </ol>
+
+  <form action="https://docs.google.com/forms/d/e/YOUR_JOIN_FORM_ID/formResponse" method="POST" target="_blank" class="join-form">
+    <label for="racerLink">Nitro Type Racer Link</label>
+    <input type="url" id="racerLink" name="entry.1234567890" placeholder="https://www.nitrotype.com/racer/yourname" required />
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Chill 4 Eva [C4] Team | Designed for Nitro Type racers.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="assets/js/darkmode.js"></script>
+<script src="assets/js/client.js"></script>
 </body>
 </html>
