@@ -2,61 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chill 4 Eva | Home</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/darkmode.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-
-<header>
-  <div class="navbar">
-    <h1>C4</h1>
-    <nav>
+  <header class="main-header">
+    <div class="logo">[C4] Chill 4 Eva</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join Us</a>
+      <a href="join.html">Join</a>
       <a href="rules.html">Rules</a>
-      <a href="tracker.html">Race Tracker</a>
+      <a href="tracker.html">Tracker</a>
       <a href="contact.html">Contact</a>
+      <button id="dark-mode-toggle">🌙</button>
     </nav>
-    <button id="dark-mode-toggle">🌙</button>
-  </div>
-</header>
+  </header>
 
-<section class="hero" data-aos="fade-up">
-  <h2>Welcome to Chill 4 Eva</h2>
-  <p>The ultimate Nitro Type team for chill racers and leaderboard grinders. Built on loyalty. Fueled by speed.</p>
-  <a href="join.html" class="btn">Join the Team</a>
-</section>
+  <section class="hero" data-aos="fade-up">
+    <h1>Welcome to Chill 4 Eva</h1>
+    <p>Your home for fast fingers, loyalty, and fun.</p>
+  </section>
 
-<section class="info-section" data-aos="fade-up">
-  <h3>🔥 Why Race with C4?</h3>
-  <div class="card-container">
-    <div class="card">
-      <img src="assets/images/placeholder1.jpg" alt="Rewards">
-      <h4>Weekly Rewards</h4>
-      <p>Earn NTC based on your weekly grind — 100k per 100 races!</p>
+  <section class="info" data-aos="fade-up">
+    <h2>What We Offer</h2>
+    <ul>
+      <li>💸 100k per 100 races weekly</li>
+      <li>🚫 7+ days inactive = kick</li>
+      <li>🏁 150+ races/week required</li>
+      <li>🎉 Team events, giveaways, and more</li>
+    </ul>
+  </section>
+
+  <section class="gallery" data-aos="zoom-in-up">
+    <h2>Featured Cars</h2>
+    <div class="gallery-grid">
+      <img src="assets/images/placeholder1.jpg" alt="Car 1" />
+      <img src="assets/images/placeholder2.jpg" alt="Car 2" />
+      <img src="assets/images/placeholder3.jpg" alt="Car 3" />
     </div>
-    <div class="card">
-      <img src="assets/images/placeholder2.jpg" alt="Team Vibes">
-      <h4>Chill Vibes</h4>
-      <p>We don’t stress — we just race and rise.</p>
-    </div>
-    <div class="card">
-      <img src="assets/images/placeholder3.jpg" alt="Stats">
-      <h4>Live Stats</h4>
-      <p>Weekly performance and tracking all in one place.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>&copy; 2025 Chill 4 Eva. Team Tag: [C4] | Built by the Community.</p>
-</footer>
+  <section class="cta" data-aos="fade-up">
+    <h2>Think You’ve Got What It Takes?</h2>
+    <p>Join Chill 4 Eva and start earning your place at the top.</p>
+    <a href="join.html" class="btn">Apply Now</a>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+  <footer>
+    <p>© 2025 Chill 4 Eva [C4] — Designed for Nitro Type legends.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
