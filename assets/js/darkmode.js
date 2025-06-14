@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("dark-mode-toggle");
-  if (!toggle) return;
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('dark-mode-toggle');
+  const isDark = localStorage.getItem('darkMode') === 'true';
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
-  });
-
-  if (localStorage.getItem("dark-mode") === "true") {
-    document.body.classList.add("dark-mode");
+  if (isDark) {
+    document.body.classList.add('dark-mode');
   }
+
+  toggle?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+  });
 });
