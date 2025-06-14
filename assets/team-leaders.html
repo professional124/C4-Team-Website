@@ -2,38 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Team Leaders | Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="header">
-    <a href="index.html" class="logo">C4</a>
-    <nav>
-      <ul class="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="team-leaders.html">Team Leaders</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="tracker.html">Tracker</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <header class="main-header">
+    <div class="logo">[C4] Chill 4 Eva</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="team-leaders.html">Team Leaders</a>
+      <a href="join.html">Join</a>
+      <a href="rules.html">Rules</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main data-aos="fade-up">
-    <h1>Team Leaders</h1>
-    <div class="cards">
+  <section class="leaders" data-aos="fade-up">
+    <h1>Meet Our Leaders</h1>
+    <div class="leader-cards">
       <div class="card">
-        <h2>Captain</h2>
-        <p>Username: [Placeholder]</p>
-        <p>WPM: [--]</p>
+        <img src="assets/images/leader1.jpg" alt="Leader 1"/>
+        <h2>Captain Nitro</h2>
+        <p>Founder & Strategist</p>
       </div>
       <div class="card">
-        <h2>Co-Captain</h2>
-        <p>Username: [Placeholder]</p>
-        <p>Joined: [--]</p>
+        <img src="assets/images/leader2.jpg" alt="Leader 2"/>
+        <h2>Speed Queen</h2>
+        <p>Race Coordinator</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/leader3.jpg" alt="Leader 3"/>
+        <h2>WPM Wizard</h2>
+        <p>Performance Lead</p>
       </div>
     </div>
-  </main>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chill 4 Eva | [C4] Team</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
