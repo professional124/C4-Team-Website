@@ -1,32 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weekly Tracker | Chill 4 Eva</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tracker | Chill 4 Eva</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo">[C4] Chill 4 Eva</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join</a>
-      <a href="rules.html">Rules</a>
-      <a href="tracker.html">Tracker</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <section class="content">
-    <h1>Weekly Tracker</h1>
-    <p>This page will show live race stats, rewards, and progress. Embed a Google Sheet or table below.</p>
-    <iframe src="https://docs.google.com/spreadsheets/d/your-sheet-id-here" width="100%" height="600px"></iframe>
-  </section>
+<header class="main-header">
+  <div class="logo">[C4] Chill 4 Eva</div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="team-leaders.html">Team Leaders</a>
+    <a href="join.html">Join</a>
+    <a href="rules.html">Rules</a>
+    <a href="tracker.html" class="active">Tracker</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <footer>
-    <p>© 2025 Chill 4 Eva [C4]</p>
-  </footer>
-</body>
-</html>
+<div class="announcement" data-aos="fade-down">
+  🚨 Weekly Comp Live: Earn $100k for every 100 races past 150! Stay sharp and race hard! 🚨
+</div>
+
+<section class="tracker-section" data-aos="fade-up">
+  <h2>Weekly Race Tracker</h2>
+  <p>Keep an eye on your weekly races to avoid removal for inactivity.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Racer</th>
+        <th>Races This Week</th>
+        <th>Races Last Week</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SpeedyGonzalez</td>
+        <td>180</td>
+        <td>210</td>
+        <td>5200</td>
+      </tr>
+      <tr>
+        <td>TurboTyler</td>
+        <td>150</td>
+        <td>160</td>
+        <td>4600</td>
+      </tr>
+      <tr>
+        <td>RacerX</td>
+        <td>140</td>
+        <td>170</td>
+        <td>4500</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>&copy; 2025 Chill 4 Eva [C4] Team | Designed for Nitro Type racers.</p>
+</footer>
+
