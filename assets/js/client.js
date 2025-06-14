@@ -1,14 +1,29 @@
-// client.js
-console.log("Chill 4 Eva website loaded");
+// AOS Initialization
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+  });
+});
 
-window.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href"))?.scrollIntoView({
-        behavior: "smooth"
-      });
-    });
+// Example Form Submission
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert("Thanks for reaching out! We'll get back to you soon.");
+    contactForm.reset();
+  });
+}
+
+// Optional: Add smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
