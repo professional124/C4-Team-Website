@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join Us | Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header class="header">...</header>
-  <main data-aos="fade-up">
-    <h1>Join Chill 4 Eva</h1>
-    <p>Want to join? Fill out this quick form:</p>
-    <form action="https://YOUR_GOOGLE_FORM_URL_HERE" method="POST" target="_blank">
-      <input type="text" name="racer-name" placeholder="Your Racer Username" required />
-      <input type="url" name="racer-link" placeholder="Your Racer Profile Link" required />
-      <button type="submit">Apply Now</button>
+  <header class="main-header">
+    <div class="logo">[C4] Chill 4 Eva</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="team-leaders.html">Team Leaders</a>
+      <a href="join.html">Join</a>
+      <a href="rules.html">Rules</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="join-form" data-aos="fade-up">
+    <h1>Apply to Join</h1>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Nitro Type Username" required />
+      <input type="url" name="profile" placeholder="Your NT Profile Link" required />
+      <textarea name="why" placeholder="Why do you want to join?" required></textarea>
+      <button type="submit">Submit Application</button>
     </form>
-  </main>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chill 4 Eva | [C4] Team</p>
+  </footer>
 </body>
 </html>
