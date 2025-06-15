@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chill 4 Eva | Home</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet"/>
-  <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chill 4 Eva - Nitro Type Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
-<header class="main-header">
-  <div class="logo">[C4] Chill 4 Eva</div>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="team-leaders.html">Team Leaders</a>
-    <a href="join.html">Join</a>
-    <a href="rules.html">Rules</a>
-    <a href="tracker.html">Tracker</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header>
+  <div class="container navbar">
+    <div class="logo">Chill 4 Eva</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="tracker.html">Race Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
 </header>
 
-<section class="hero" data-aos="fade-up">
-  <h1>Welcome to Chill 4 Eva</h1>
-  <p>The ultimate Nitro Type team experience — race hard, win big, and chill forever.</p>
-  <a href="join.html" class="btn">Join Us</a>
-</section>
+<main>
+  <section class="hero" role="banner" aria-label="Welcome to Chill 4 Eva Nitro Type Team">
+    <h1>Chill 4 Eva</h1>
+    <p>The Nitro Type team for racers who love to compete, have fun, and climb the leaderboards together.</p>
+    <a href="join.html" class="btn btn-primary" role="button">Join Us Now</a>
+  </section>
 
-<section class="features" data-aos="fade-up">
-  <h2>Why Join C4?</h2>
-  <ul class="feature-list">
-    <li>💰 Weekly rewards for top racers</li>
-    <li>⏳ 7-day inactivity = auto kick</li>
-    <li>🏁 150 races/week minimum</li>
-    <li>🌐 Active, growing community</li>
-    <li>👑 Team Tag: <strong>C4</strong></li>
-  </ul>
-</section>
+  <section aria-labelledby="about-title" class="container mt-2">
+    <h2 id="about-title">About Chill 4 Eva</h2>
+    <p class="text-center">Founded in 2024, Chill 4 Eva is dedicated to supporting Nitro Type racers of all skill levels. We foster a friendly, competitive environment with clear rules, rewards, and community events.</p>
+  </section>
 
-<section class="testimonials" data-aos="fade-up">
-  <h2>What Our Racers Say</h2>
-  <div class="testimonial-boxes">
-    <div class="testimonial">"C4 is the most fun team I've been in — amazing community!"</div>
-    <div class="testimonial">"I grind every day and the rewards are real. Worth it!"</div>
-    <div class="testimonial">"Best team ever. Everyone’s chill, helpful, and fast!"</div>
-  </div>
-</section>
+  <section aria-labelledby="features-title" class="container">
+    <h2 id="features-title">Why Join Us?</h2>
+    <div class="cards">
+      <article class="card" tabindex="0" aria-label="Competitive Team">
+        <h3>Competitive Team</h3>
+        <p>Race hard with teammates who push you to be your best and win big weekly rewards.</p>
+      </article>
+      <article class="card" tabindex="0" aria-label="Community & Support">
+        <h3>Community & Support</h3>
+        <p>Access our Discord and live chat to connect, share tips, and celebrate victories.</p>
+      </article>
+      <article class="card" tabindex="0" aria-label="Rewards & Recognition">
+        <h3>Rewards & Recognition</h3>
+        <p>Earn badges, weekly payouts, and get featured in our leaderboards and announcements.</p>
+      </article>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>&copy; 2025 Chill 4 Eva [C4] Team | Designed for Nitro Type racers.</p>
+  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="assets/js/darkmode.js"></script>
 <script src="assets/js/client.js"></script>
-<script>AOS.init();</script>
 </body>
 </html>
