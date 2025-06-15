@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <header>
@@ -26,13 +25,8 @@
 
   <section class="container">
     <h2>Questions, suggestions, or business? Reach out to us below!</h2>
-    <form 
-      id="contact-form" 
-      action="https://formsubmit.co/f/xqabbqaw" 
-      method="POST" 
-      novalidate
-    >
-      <label for="username">Your Nitro Type Username</label>
+    <form id="contact-form">
+      <label for="username">Username</label>
       <input
         type="text"
         id="username"
@@ -55,11 +49,9 @@
         id="message"
         name="message"
         rows="5"
-        placeholder="Your message here..."
+        placeholder="Your message here"
         required
       ></textarea>
-
-      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
 
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
@@ -69,40 +61,7 @@
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
 
-  <script>
-    const contactForm = document.getElementById('contact-form');
-
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-        alert("Please complete the CAPTCHA.");
-        return;
-      }
-
-      const formData = new FormData(contactForm);
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: contactForm.method,
-          headers: {
-            'Accept': 'application/json'
-          },
-          body: formData
-        });
-
-        if (response.ok) {
-          alert('Thank you! Your message has been sent.');
-          contactForm.reset();
-          grecaptcha.reset();
-        } else {
-          alert('Oops! There was a problem submitting your form.');
-        }
-      } catch (error) {
-        alert('Oops! There was a problem submitting your form.');
-      }
-    });
-  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></script>
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
