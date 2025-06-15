@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - Chill 4 Eva</title>
+  <title>Contact Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <header>
@@ -25,7 +26,7 @@
 
   <section class="container">
     <h2>Questions, suggestions, or business? Reach out to us below!</h2>
-    <form id="contact-form">
+    <form id="contact-form" action="https://c4-form-backend.onrender.com/api/contact" method="POST">
       <label for="username">Username</label>
       <input
         type="text"
@@ -48,10 +49,12 @@
       <textarea
         id="message"
         name="message"
+        placeholder="Write your message here..."
         rows="5"
-        placeholder="Your message here"
         required
       ></textarea>
+
+      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
 
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
@@ -61,7 +64,6 @@
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
 
-  <script src="https://www.google.com/recaptcha/api.js?render=6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></script>
   <script src="assets/js/client.js"></script>
 </body>
 </html>
