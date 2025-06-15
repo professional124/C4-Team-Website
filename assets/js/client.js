@@ -1,33 +1,53 @@
-// client.js - Misc client-side enhancements
+// ===== Chill 4 Eva | client.js =====
 
-// Smooth scroll for anchor links (redundant if CSS scroll-behavior is supported, but for wider support)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("Chill 4 Eva site loaded successfully 🚀");
+
+  // Animate on scroll (if AOS is loaded)
+  if (window.AOS) {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  }
+
+  // Auto-activate nav link based on page
+  const navLinks = document.querySelectorAll('.navbar nav ul li a');
+  const currentPage = window.location.pathname.split('/').pop();
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
     }
   });
-});
 
-// Form validation example for join form (only racer link required)
-const joinForm = document.getElementById('join-form');
-if(joinForm) {
-  joinForm.addEventListener('submit', e => {
-    const racerInput = joinForm.querySelector('input[name="racer_link"]');
-    if(!racerInput.value.trim()) {
-      e.preventDefault();
-      alert('Please enter your Nitro Type racer link.');
-      racerInput.focus();
-    }
+  // Show confirmation after join form submits (Formspree)
+  const joinForm = document.querySelector('#join-form');
+  const joinMessage = document.querySelector('#join-success');
+  if (joinForm) {
+    joinForm.addEventListener('submit', () => {
+      setTimeout(() => {
+        if (joinMessage) joinMessage.style.display = 'block';
+      }, 500);
+    });
+  }
+
+  // Add hover effect to team cards
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('mouseover', () => {
+      card.style.transform = 'translateY(-6px)';
+    });
+    card.addEventListener('mouseout', () => {
+      card.style.transform = 'translateY(0)';
+    });
   });
-}
 
-// Add active class to nav links based on current URL
-const navLinks = document.querySelectorAll('.navbar nav ul li a');
-navLinks.forEach(link => {
-  if(link.href === window.location.href) {
-    link.classList.add('active');
+  // Smooth scroll to top (optional utility)
+  const scrollTopBtn = document.querySelector('#scroll-to-top');
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 });
