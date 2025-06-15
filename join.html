@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Join Us - Chill 4 Eva Nitro Type Team</title>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Us - Chill 4 Eva</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/client.js"></script>
 </head>
 <body>
-<header>
-  <div class="container navbar">
-    <div class="logo">Chill 4 Eva</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="team-leaders.html">Team Leaders</a></li>
-        <li><a href="join.html" class="active">Join Us</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="tracker.html">Race Tracker</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
-  </div>
-</header>
+  <header>
+    <div class="container navbar">
+      <div class="logo">C4</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="team-leaders.html">Team Leaders</a></li>
+          <li><a href="join.html" class="active">Join Us</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="tracker.html">Tracker</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main>
-  <section class="container mt-2" aria-label="Join the team form">
+  <section>
     <h2>Join Chill 4 Eva</h2>
-    <p class="text-center">Fill out the form below to apply to join our Nitro Type team.</p>
-    <form id="join-form" action="#" method="POST" novalidate>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name" required />
+    <p class="text-center">
+      Ready to race with us? Fill out the form below to apply to join Chill 4 Eva Nitro Type Team.
+    </p>
 
-      <label for="racer_link">Nitro Type Racer Link *</label>
-      <input type="text" id="racer_link" name="racer_link" placeholder="https://www.nitrotype.com/racer/yourname" required />
+    <form>
+      <label for="username">Nitro Type Username</label>
+      <input type="text" id="username" name="username" required placeholder="Your Nitro Type username" />
 
-      <label for="discord">Discord (optional)</label>
-      <input type="text" id="discord" name="discord" placeholder="Discord username#1234" />
+      <label for="age">Age</label>
+      <input type="text" id="age" name="age" required placeholder="Your age" />
 
-      <button type="submit" class="btn btn-primary">Submit Application</button>
+      <label for="reason">Why do you want to join?</label>
+      <textarea id="reason" name="reason" rows="4" required placeholder="Tell us why you want to join Chill 4 Eva"></textarea>
+
+      <button type="submit">Submit Application</button>
     </form>
   </section>
-</main>
 
-<footer>
-  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
-</footer>
-
-<script src="assets/js/darkmode.js"></script>
-<script src="assets/js/client.js"></script>
+  <footer>
+    &copy; 2025 Chill 4 Eva Nitro Type Team
+  </footer>
 </body>
 </html>
