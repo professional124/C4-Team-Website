@@ -24,16 +24,36 @@
   </header>
 
   <section class="container">
-    <h2>Contact Us</h2>
-    <p>Questions, suggestions, or business? Reach out to us below!</p>
-    <form>
-      <label>Your Name</label>
-      <input type="text" placeholder="Name" required />
-      <label>Email Address</label>
-      <input type="email" placeholder="you@example.com" required />
-      <label>Message</label>
-      <textarea placeholder="Type your message here..." required></textarea>
-      <button type="submit" class="btn btn-primary">Send Message</button>
+    <h2>Questions, suggestions, or business? Reach out to us below!</h2>
+
+    <form action="https://formspree.io/f/xqabbqaw" method="POST">
+      <label for="name">Username</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your Nitro Type username"
+        required
+      />
+
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="_replyto"
+        placeholder="you@example.com"
+        required
+      />
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Your message here"
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary">Send</button>
     </form>
   </section>
 
