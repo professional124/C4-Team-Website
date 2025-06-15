@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join Us - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <header>
@@ -26,23 +25,15 @@
 
   <section class="container">
     <h2>Join Chill 4 Eva</h2>
-    <form 
-      id="join-form" 
-      action="https://formsubmit.co/f/xqabbqaw" 
-      method="POST" 
-      novalidate
-    >
-      <label for="racerLink">Nitro Type Racer Profile Link</label>
+    <form id="join-form">
+      <label for="profileLink">Nitro Type Racer Profile Link</label>
       <input
         type="url"
-        id="racerLink"
-        name="racerLink"
+        id="profileLink"
+        name="profileLink"
         placeholder="E.g https://www.nitrotype.com/racer/sub2vyloqonyt"
         required
       />
-
-      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
-
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
@@ -51,40 +42,7 @@
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
 
-  <script>
-    const form = document.getElementById('join-form');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-        alert("Please complete the CAPTCHA.");
-        return;
-      }
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          headers: {
-            'Accept': 'application/json'
-          },
-          body: formData
-        });
-
-        if (response.ok) {
-          alert('Thank you! Your join request has been submitted.');
-          form.reset();
-          grecaptcha.reset();
-        } else {
-          alert('Oops! There was a problem submitting your form.');
-        }
-      } catch (error) {
-        alert('Oops! There was a problem submitting your form.');
-      }
-    });
-  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></script>
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
