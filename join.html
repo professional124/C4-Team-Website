@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join Us - Chill 4 Eva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -26,17 +26,18 @@
   <section class="container">
     <h2>Join Chill 4 Eva</h2>
     <form action="https://formspree.io/f/xqabbqaw" method="POST">
-      <label for="profile-link">Nitro Type Profile Link</label>
-      <input 
-        type="url" 
-        id="profile-link" 
-        name="profile-link" 
-        placeholder="E.g https://www.nitrotype.com/racer/sub2vyloqonyt" 
-        required 
-        pattern="https?://.*" 
-        title="Please enter a valid URL starting with http:// or https://"
+      <label for="racer">Nitro Type Profile Link</label>
+      <input
+        type="url"
+        id="racer"
+        name="racer"
+        required
+        placeholder="E.g https://www.nitrotype.com/racer/sub2vyloqonyt"
       />
-      <button type="submit" class="btn btn-primary">Apply to Join</button>
+
+      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
 
@@ -44,6 +45,7 @@
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="assets/js/client.js"></script>
 </body>
 </html>
