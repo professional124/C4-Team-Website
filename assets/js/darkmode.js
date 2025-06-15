@@ -1,13 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('dark-mode-toggle');
-  const isDark = localStorage.getItem('darkMode') === 'true';
+document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
 
-  if (isDark) {
-    document.body.classList.add('dark-mode');
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
   }
-
-  toggle?.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-  });
 });
