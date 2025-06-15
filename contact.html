@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us - Chill 4 Eva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/client.js"></script>
 </head>
 <body>
   <header>
@@ -15,24 +14,33 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="team-leaders.html">Team Leaders</a></li>
-          <li><a href="join.html">Join</a></li>
-          <li><a href="rules.html">Rules</a></li>
-          <li><a href="tracker.html">Tracker</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="rules.html">Team Rules</a></li>
+          <li><a href="tracker.html">Race Tracker</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Contact Us</h2>
-      <p>For general inquiries or support, email us at <a href="mailto:ethan.j.del5@outlook.com">ethan.j.del5@outlook.com</a>.</p>
-    </section>
-  </main>
+  <section class="container">
+    <h2>Contact Us</h2>
+    <p>Questions, suggestions, or business? Reach out to us below!</p>
+    <form>
+      <label>Your Name</label>
+      <input type="text" placeholder="Name" required />
+      <label>Email Address</label>
+      <input type="email" placeholder="you@example.com" required />
+      <label>Message</label>
+      <textarea placeholder="Type your message here..." required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+    <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
+
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
