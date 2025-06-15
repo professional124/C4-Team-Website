@@ -3,49 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join | Chill 4 Eva</title>
+  <title>Join Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 </head>
 <body>
+  <header class="main-header">
+    <div class="logo">[C4] Chill 4 Eva</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="team-leaders.html">Team Leaders</a>
+      <a href="join.html" class="active">Join</a>
+      <a href="rules.html">Rules</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<header class="main-header">
-  <div class="logo">[C4] Chill 4 Eva</div>
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="team-leaders.html">Team Leaders</a>
-    <a href="join.html" class="active">Join</a>
-    <a href="rules.html">Rules</a>
-    <a href="tracker.html">Tracker</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <section class="page-header" data-aos="fade-up">
+    <h1>Join Chill 4 Eva</h1>
+    <p>Ready to race with the best? Send us your racer link below and we’ll review your application.</p>
+  </section>
 
-<section class="join-section" data-aos="fade-up">
-  <h1>Join Chill 4 Eva</h1>
-  <p>Ready to race with the C4 squad? Just drop your Nitro Type racer link below and we’ll review your application shortly.</p>
+  <section class="join-form-section" data-aos="fade-up">
+    <form action="https://formspree.io/f/xqabbqaw" method="POST" class="join-form">
+      <input type="url" name="racer-link" placeholder="Your Nitro Type Racer Link" required />
+      <button type="submit">Apply Now</button>
+    </form>
+  </section>
 
-  <!-- ✅ Form to collect racer link -->
-  <form action="https://formspree.io/f/mrbkkpwl" method="POST" id="join-form">
-    <input 
-      type="text" 
-      name="racer_link" 
-      placeholder="Paste your Nitro Type racer link here (e.g. https://www.nitrotype.com/racer/yourname)" 
-      required 
-    />
-    <button type="submit">Submit Application</button>
-  </form>
-</section>
+  <footer>
+    <p>&copy; 2025 Chill 4 Eva [C4] Team | Designed for Nitro Type racers.</p>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 Chill 4 Eva [C4] Team | Powered by Nitro Type spirit.</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
-<script src="assets/js/darkmode.js"></script>
-<script src="assets/js/client.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="assets/js/darkmode.js"></script>
 </body>
 </html>
