@@ -24,6 +24,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
-    }
+      // GSAP animations on load
+window.addEventListener('load', () => {
+  gsap.from(".logo", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+  gsap.from(".main-nav a", {
+    duration: 1,
+    x: 100,
+    opacity: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    ease: "power2.out"
   });
 });
+
+
