@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join | Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -23,36 +22,30 @@
   </nav>
 </header>
 
-<div class="announcement" data-aos="fade-down">
-  🚨 Weekly Comp Live: Earn $100k for every 100 races past 150! Stay sharp and race hard! 🚨
-</div>
-
 <section class="join-section" data-aos="fade-up">
-  <h2>Join Chill 4 Eva</h2>
-  <p>Ready to race with us? Here's how to join:</p>
+  <h1>Join Chill 4 Eva</h1>
+  <p>Ready to race with the C4 squad? Just drop your Nitro Type racer link below and we’ll review your application shortly.</p>
 
-  <ol>
-    <li>Make sure you meet the weekly minimum of 150 races.</li>
-    <li>Submit your Nitro Type racer link below.</li>
-    <li>Follow our team rules and be active in our Discord community.</li>
-  </ol>
-
-  <form action="https://docs.google.com/forms/d/e/YOUR_JOIN_FORM_ID/formResponse" method="POST" target="_blank" class="join-form">
-    <label for="racerLink">Nitro Type Racer Link</label>
-    <input type="url" id="racerLink" name="entry.1234567890" placeholder="https://www.nitrotype.com/racer/yourname" required />
-    <button type="submit" class="btn">Submit</button>
+  <!-- ✅ Form to collect racer link -->
+  <form action="https://formspree.io/f/mrbkkpwl" method="POST" id="join-form">
+    <input 
+      type="text" 
+      name="racer_link" 
+      placeholder="Paste your Nitro Type racer link here (e.g. https://www.nitrotype.com/racer/yourname)" 
+      required 
+    />
+    <button type="submit">Submit Application</button>
   </form>
 </section>
 
 <footer>
-  <p>&copy; 2025 Chill 4 Eva [C4] Team | Designed for Nitro Type racers.</p>
+  <p>&copy; 2025 Chill 4 Eva [C4] Team | Powered by Nitro Type spirit.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+<script>AOS.init();</script>
 <script src="assets/js/darkmode.js"></script>
 <script src="assets/js/client.js"></script>
+
 </body>
 </html>
