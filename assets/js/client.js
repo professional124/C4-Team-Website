@@ -1,60 +1,29 @@
-// client.js
-
-// Function to handle form submission with reCAPTCHA and backend
-async function handleFormSubmit(event, formId) {
-  event.preventDefault();
-
+// Helper function to handle form submission with reCAPTCHA validation
+function handleFormSubmit(formId) {
   const form = document.getElementById(formId);
-  const submitButton = form.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
+  if (!form) return;
 
-  try {
-    // Execute reCAPTCHA v3 and get token
-    const token = await grecaptcha.execute('6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0', { action: 'submit' });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    // Prepare form data including recaptcha token
-    const formData = new FormData(form);
-    formData.append('recaptchaToken', token);
+    const captchaResponse = grecaptcha.getResponse();
 
-    // Convert FormData to JSON object
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-
-    // Send data to your backend API
-    const response = await fetch('https://c4-form-backend.onrender.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-
-    if (response.ok && result.success) {
-      alert('Form submitted successfully! Thank you.');
-      form.reset();
-      grecaptcha.reset();
-    } else {
-      alert('Error submitting form: ' + (result.message || 'Unknown error'));
+    if (captchaResponse.length === 0) {
+      alert('Please complete the reCAPTCHA.');
+      return;
     }
-  } catch (error) {
-    alert('Network error submitting form. Please try again later.');
-    console.error('Form submit error:', error);
-  } finally {
-    submitButton.disabled = false;
-  }
+
+    // Optionally, disable the submit button to prevent multiple submits
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    // Submit the form normally
+    form.submit();
+  });
 }
 
-// Initialize event listeners when DOM is ready
+// Initialize both forms if they exist
 document.addEventListener('DOMContentLoaded', () => {
-  const joinForm = document.getElementById('join-form');
-  if (joinForm) {
-    joinForm.addEventListener('submit', (e) => handleFormSubmit(e, 'join-form'));
-  }
-
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => handleFormSubmit(e, 'contact-form'));
-  }
+  handleFormSubmit('join-form');
+  handleFormSubmit('contact-form');
 });
