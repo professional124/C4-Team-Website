@@ -7,7 +7,6 @@
   --accent-color: #1ed760;
   --background-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   --text-color-light: #f0f0f0;
-  --text-color-dark: #111;
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Open Sans', sans-serif;
   --transition-speed: 0.3s;
@@ -31,40 +30,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-}
-
-/* Light mode overrides */
-body.light-mode {
-  background: #f9f9f9;
-  color: var(--text-color-dark);
-}
-body.light-mode .navbar nav ul li a {
-  color: var(--text-color-dark);
-}
-body.light-mode .navbar nav ul li a:hover,
-body.light-mode .navbar nav ul li a.active {
-  background-color: var(--team-color-dark);
-  color: #fff;
-}
-body.light-mode header {
-  background-color: #fff;
-  border-bottom-color: var(--team-color-dark);
-}
-body.light-mode .card {
-  background: #fff;
-  color: var(--text-color-dark);
-}
-body.light-mode .card:hover {
-  background: #f0f0f0;
-}
-body.light-mode form {
-  background: #fff;
-  color: var(--text-color-dark);
-}
-body.light-mode footer {
-  background-color: #f0f0f0;
-  color: var(--text-color-dark);
+  transition: background-color var(--transition-speed) ease;
 }
 
 /* Container */
@@ -115,22 +81,6 @@ header {
 }
 .navbar nav ul li a:hover,
 .navbar nav ul li a.active {
-  background-color: var(--team-color);
-  color: #fff;
-}
-
-/* Dark mode toggle button */
-#dark-mode-toggle {
-  background-color: transparent;
-  border: 2px solid var(--team-color);
-  color: var(--team-color);
-  padding: 0.3rem 0.6rem;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#dark-mode-toggle:hover {
   background-color: var(--team-color);
   color: #fff;
 }
