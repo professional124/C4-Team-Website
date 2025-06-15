@@ -5,61 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weekly Race Tracker - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo"><a href="index.html">Chill 4 Eva</a></div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="team-leaders.html">Team Leaders</a></li>
-        <li><a href="join.html">Join Us</a></li>
-        <li><a href="rules.html">Team Rules</a></li>
-        <li><a href="tracker.html" class="active">Weekly Race Tracker</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <header class="site-header">
+    <div class="logo">Chill 4 Eva</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="team-leaders.html">Team Leaders</a>
+      <a href="join.html">Join Us</a>
+      <a href="rules.html">Team Rules</a>
+      <a href="tracker.html" aria-current="page">Weekly Race Tracker</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="container" data-aos="fade-up">
-    <h1>Weekly Race Tracker</h1>
-    <p>Track team members' race counts and progress here.</p>
+  <main class="container">
+    <h1 class="page-title">Weekly Race Tracker</h1>
 
-    <section class="tracker-section">
-      <!-- Example tracker table -->
-      <table class="tracker-table" aria-label="Weekly race tracker">
-        <thead>
-          <tr>
-            <th>Racer</th>
-            <th>Races This Week</th>
-            <th>Rewards Earned</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Shadow_Reaper123</td>
-            <td>200</td>
-            <td>2,000,000 NTC</td>
-          </tr>
-          <tr>
-            <td>SpeedsterXYZ</td>
-            <td>180</td>
-            <td>1,800,000 NTC</td>
-          </tr>
-          <!-- Add dynamic data as needed -->
-        </tbody>
-      </table>
-    </section>
+    <p class="intro-text">
+      Track your weekly race progress here. Weekly tracking resets every Friday. Payments are made on Fridays as well.
+    </p>
+
+    <table class="race-tracker-table">
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Races This Week</th>
+          <th>Races Last Week</th>
+          <th>Difference</th>
+          <th>Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ShadowReaper123</td>
+          <td>180</td>
+          <td>170</td>
+          <td>+10</td>
+          <td>1,000,000 NTC</td>
+        </tr>
+        <tr>
+          <td>NitroQueen</td>
+          <td>150</td>
+          <td>140</td>
+          <td>+10</td>
+          <td>800,000 NTC</td>
+        </tr>
+        <tr>
+          <td>SpeedsterX</td>
+          <td>200</td>
+          <td>190</td>
+          <td>+10</td>
+          <td>1,200,000 NTC</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 
-  <footer>
-    <p>© 2025 Chill 4 Eva Nitro Type Team</p>
+  <footer class="site-footer">
+    &copy; 2025 Chill 4 Eva Nitro Type Team
   </footer>
-
-  <script src="assets/js/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
