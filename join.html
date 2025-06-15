@@ -27,19 +27,29 @@
 
 <main class="container">
   <h1>Join Chill 4 Eva</h1>
-  <p>To join Chill 4 Eva, simply follow the instructions below. We accept active, friendly, and competitive racers!</p>
+  <p>Ready to race with the best? Fill out the form below and we'll review your application as soon as possible.</p>
 
-  <form action="#" method="POST">
-    <label for="username">Nitro Type Username:</label>
-    <input type="text" id="username" name="username" required>
+  <form action="https://formspree.io/f/your-form-id" method="POST" class="join-form">
+    <label for="nt-user">Nitro Type Username</label>
+    <input
+      type="text"
+      id="nt-user"
+      name="nt-user"
+      placeholder="E.g https://nitrotype.com/racer/sub2vyloqonyt"
+      required
+    />
 
-    <label for="races">Average Weekly Races:</label>
-    <input type="number" id="races" name="races" required>
+    <!-- CAPTCHA -->
+    <div class="captcha-box">
+      <label for="captcha">Please complete the CAPTCHA before submitting:</label>
+      <div>
+        <!-- Replace below with real CAPTCHA if desired -->
+        <input type="checkbox" id="captcha" required />
+        <label for="captcha">I'm not a robot</label>
+      </div>
+    </div>
 
-    <label for="message">Why do you want to join?</label>
-    <textarea id="message" name="message" rows="4"></textarea>
-
-    <button type="submit" class="btn">Submit Application</button>
+    <button type="submit" class="btn btn-primary">Apply Now</button>
   </form>
 </main>
 
