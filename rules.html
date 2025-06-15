@@ -1,58 +1,73 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Rules - Chill 4 Eva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="site-header">
+<header>
+  <div class="container navbar">
     <div class="logo">Chill 4 Eva</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join Us</a>
-      <a href="rules.html" aria-current="page">Team Rules</a>
-      <a href="tracker.html">Weekly Race Tracker</a>
-      <a href="contact.html">Contact</a>
+    <nav>
+      <ul>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Chill 4 Eva</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="rules.html" class="active">Rules</a></li>
+        <li><a href="tracker.html">Race Tracker</a></li>
+        <li><a href="rules.html" class="active">Team Rules</a></li>
+        <li><a href="tracker.html">Weekly Race Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
+</header>
   </header>
 
-  <main class="container">
-    <h1 class="page-title">Team Rules</h1>
+<main class="container">
+  <h1>Team Rules</h1>
+  <ul>
+    <li>Minimum 150 races per week to stay on the team.</li>
+    <li>No botting, cheating, or exploiting – instant removal.</li>
+    <li>Be respectful on NT and Discord.</li>
+    <li>Participate in team events and communicate absences.</li>
+    <li>Payouts are based on 100k per 100 races after your first 150.</li>
+  </ul>
+</main>
+  <main class="container" data-aos="fade-up">
+    <h1>Team Rules</h1>
+    <p>To keep Chill 4 Eva strong and fun, all members must follow these rules:</p>
 
-    <section class="card">
-      <h2 class="section-title">General Conduct</h2>
-      <ul class="rules-list">
-        <li>Be respectful and supportive to all team members.</li>
-        <li>No cheating, botting, or exploiting.</li>
-        <li>Follow the Nitro Type Terms of Service at all times.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">Race Participation</h2>
-      <ul class="rules-list">
-        <li>Complete at least 20 races per week to remain active.</li>
-        <li>Participate in team events and competitions when possible.</li>
-        <li>Notify team leaders if you plan to be inactive for an extended period.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">Communication</h2>
-      <ul class="rules-list">
-        <li>Use the official Discord for team communication.</li>
-        <li>Keep discussions positive and avoid conflict.</li>
-        <li>Report any issues or rule violations to team leaders.</li>
-      </ul>
-    </section>
+<footer>
+  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+</footer>
+<script src="assets/js/darkmode.js"></script>
+    <ul class="rules-list">
+      <li>Be respectful to all team members.</li>
+      <li>Participate in weekly races actively.</li>
+      <li>No cheating, botting, or exploiting.</li>
+      <li>Follow all Nitro Type community guidelines.</li>
+      <li>Communicate issues with team leaders promptly.</li>
+      <li>Have fun and support your teammates!</li>
+    </ul>
   </main>
 
-  <footer class="site-footer">
-    &copy; 2025 Chill 4 Eva Nitro Type Team
+  <footer>
+    <p>© 2025 Chill 4 Eva Nitro Type Team</p>
   </footer>
+
+  <script src="assets/js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
