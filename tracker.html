@@ -1,70 +1,122 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weekly Race Tracker - Chill 4 Eva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="site-header">
+<header>
+  <div class="container navbar">
     <div class="logo">Chill 4 Eva</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join Us</a>
-      <a href="rules.html">Team Rules</a>
-      <a href="tracker.html" aria-current="page">Weekly Race Tracker</a>
-      <a href="contact.html">Contact</a>
+    <nav>
+      <ul>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Chill 4 Eva</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="tracker.html" class="active">Race Tracker</a></li>
+        <li><a href="rules.html">Team Rules</a></li>
+        <li><a href="tracker.html" class="active">Weekly Race Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
+</header>
   </header>
 
-  <main class="container">
-    <h1 class="page-title">Weekly Race Tracker</h1>
+<main class="container">
+  <h1>Weekly Race Tracker</h1>
+  <p>This page is updated every Friday. Payments are calculated based on 100k per 100 races after the first 150. Stay active to earn rewards!</p>
+  <main class="container" data-aos="fade-up">
+    <h1>Weekly Race Tracker</h1>
+    <p>Track team members' race counts and progress here.</p>
 
-    <p class="intro-text">
-      Track your weekly race progress here. Weekly tracking resets every Friday. Payments are made on Fridays as well.
-    </p>
-
-    <table class="race-tracker-table">
+  <div class="tracker-table">
+    <table>
       <thead>
         <tr>
-          <th>Member</th>
-          <th>Races This Week</th>
-          <th>Races Last Week</th>
-          <th>Difference</th>
-          <th>Payment</th>
+          <th>Racer</th>
+          <th>Races (Start)</th>
+          <th>Races (Now)</th>
+          <th>Races Gained</th>
+          <th>Payout</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>ShadowReaper123</td>
-          <td>180</td>
-          <td>170</td>
-          <td>+10</td>
-          <td>1,000,000 NTC</td>
+          <td>Sub 2 Xyloplayz YT</td>
+          <td>2,300</td>
+          <td>2,700</td>
+          <td>400</td>
+          <td>$250,000</td>
         </tr>
         <tr>
-          <td>NitroQueen</td>
-          <td>150</td>
-          <td>140</td>
-          <td>+10</td>
-          <td>800,000 NTC</td>
+          <td>FastFury345</td>
+          <td>5,150</td>
+          <td>5,250</td>
+          <td>100</td>
+          <td>$0</td>
         </tr>
         <tr>
-          <td>SpeedsterX</td>
-          <td>200</td>
-          <td>190</td>
-          <td>+10</td>
-          <td>1,200,000 NTC</td>
+          <td>Typ3Mast3r</td>
+          <td>9,990</td>
+          <td>10,290</td>
+          <td>300</td>
+          <td>$150,000</td>
         </tr>
+        <!-- More racers can be added here -->
       </tbody>
     </table>
+  </div>
+    <section class="tracker-section">
+      <!-- Example tracker table -->
+      <table class="tracker-table" aria-label="Weekly race tracker">
+        <thead>
+          <tr>
+            <th>Racer</th>
+            <th>Races This Week</th>
+            <th>Rewards Earned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Shadow_Reaper123</td>
+            <td>200</td>
+            <td>2,000,000 NTC</td>
+          </tr>
+          <tr>
+            <td>SpeedsterXYZ</td>
+            <td>180</td>
+            <td>1,800,000 NTC</td>
+          </tr>
+          <!-- Add dynamic data as needed -->
+        </tbody>
+      </table>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    &copy; 2025 Chill 4 Eva Nitro Type Team
+  <p><strong>Note:</strong> Only races above the first 150 this week count toward payout.</p>
+</main>
+  <footer>
+    <p>© 2025 Chill 4 Eva Nitro Type Team</p>
   </footer>
+
+<footer>
+  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+</footer>
+<script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
