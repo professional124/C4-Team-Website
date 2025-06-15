@@ -27,24 +27,23 @@
 
 <main class="container">
   <h1>Join Chill 4 Eva</h1>
-  <p>Ready to race with the best? Fill out the form below and we'll review your application as soon as possible.</p>
+  <p>Want to race with C4? Submit your Nitro Type username below — make sure to follow the rules before applying.</p>
 
-  <form action="https://formspree.io/f/your-form-id" method="POST" class="join-form">
+  <form action="https://c4-form-backend.onrender.com/join" method="POST" class="join-form">
     <label for="nt-user">Nitro Type Username</label>
     <input
       type="text"
       id="nt-user"
-      name="nt-user"
+      name="username"
       placeholder="E.g https://nitrotype.com/racer/sub2vyloqonyt"
       required
     />
 
-    <!-- CAPTCHA -->
+    <!-- CAPTCHA section handled by your backend -->
     <div class="captcha-box">
-      <label for="captcha">Please complete the CAPTCHA before submitting:</label>
+      <label for="captcha">Please verify you're human:</label>
       <div>
-        <!-- Replace below with real CAPTCHA if desired -->
-        <input type="checkbox" id="captcha" required />
+        <input type="checkbox" id="captcha" name="captcha" required />
         <label for="captcha">I'm not a robot</label>
       </div>
     </div>
