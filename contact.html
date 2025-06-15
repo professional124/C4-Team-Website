@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us - Chill 4 Eva</title>
+  <title>Weekly Race Tracker - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/main.js"></script>
 </head>
@@ -15,25 +15,51 @@
       <a href="team-leaders.html">Team Leaders</a>
       <a href="join.html">Join Us</a>
       <a href="rules.html">Team Rules</a>
-      <a href="tracker.html">Weekly Race Tracker</a>
-      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="tracker.html" aria-current="page">Weekly Race Tracker</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main class="container">
-    <h1 class="page-title">Contact Us</h1>
-    <form id="contact-form" action="/contact" method="POST" novalidate>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your full name" />
+    <h1 class="page-title">Weekly Race Tracker</h1>
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required placeholder="Your email address" />
+    <p>Track your weekly race progress here. Weekly tracking resets every Friday. Payments are made on Fridays as well.</p>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required placeholder="Write your message here"></textarea>
-
-      <input type="submit" value="Send Message" />
-    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Races This Week</th>
+          <th>Races Last Week</th>
+          <th>Difference</th>
+          <th>Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ShadowReaper123</td>
+          <td>180</td>
+          <td>170</td>
+          <td>+10</td>
+          <td>1,000,000 NTC</td>
+        </tr>
+        <tr>
+          <td>NitroQueen</td>
+          <td>150</td>
+          <td>140</td>
+          <td>+10</td>
+          <td>800,000 NTC</td>
+        </tr>
+        <tr>
+          <td>SpeedsterX</td>
+          <td>200</td>
+          <td>190</td>
+          <td>+10</td>
+          <td>1,200,000 NTC</td>
+        </tr>
+        <!-- Add more members dynamically -->
+      </tbody>
+    </table>
   </main>
 
   <footer>
