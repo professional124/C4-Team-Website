@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function validateRecaptcha(event) {
+      const response = grecaptcha.getResponse();
+      if (!response) {
+        alert("Please complete the CAPTCHA.");
+        event.preventDefault();
+        return false;
+      }
+      return true;
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -25,22 +35,19 @@
   </header>
 
   <section class="container">
-    <h2>Questions, suggestions, or business? Reach out to us below!</h2>
-    <form action="https://formsubmit.co/ethan.j.del5@outlook.com" method="POST" class="form">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_subject" value="New Contact Message - Chill 4 Eva">
-
-      <label for="username">Your Nitro Type Username</label>
-      <input type="text" id="username" name="Username" placeholder="e.g. Sub2VyloqOnYT" required>
+    <h2>Questions, Suggestions, or Business?</h2>
+    <p>Reach out to us below!</p>
+    <form onsubmit="return validateRecaptcha(event)" action="https://formsubmit.co/ethan.j.del5@outlook.com" method="POST" class="form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="Username" placeholder="Your Nitro Type or Discord Username" required />
 
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+      <input type="email" id="email" name="Email" placeholder="you@example.com" required />
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="Message" rows="5" required></textarea>
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" rows="4" placeholder="Let us know your questions or ideas..." required></textarea>
 
       <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
-
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
   </section>
@@ -48,5 +55,8 @@
   <footer>
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
