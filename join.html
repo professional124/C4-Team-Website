@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join Us - Chill 4 Eva</title>
+  <title>Contact - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -15,10 +15,10 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="team-leaders.html">Team Leaders</a></li>
-        <li><a href="join.html" class="active">Join Us</a></li>
+        <li><a href="join.html">Join Us</a></li>
         <li><a href="rules.html">Team Rules</a></li>
         <li><a href="tracker.html">Weekly Race Tracker</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
       <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌓</button>
     </nav>
@@ -26,22 +26,40 @@
 
   <main class="container" data-aos="fade-up">
     <section class="form-section">
-      <h1>Join Chill 4 Eva</h1>
-      <p>Fill out the form below to apply to join our Nitro Type team.</p>
+      <h1>Contact Us</h1>
+      <p>If you have questions or need assistance, fill out the form below.</p>
 
-      <form id="join-form" method="POST" action="https://c4-form-backend.onrender.com/api/join" class="form" novalidate>
-        <label for="profileLink">Your Nitro Type Profile Link</label>
+      <form id="contact-form" method="POST" action="https://c4-form-backend.onrender.com/api/contact" class="form" novalidate>
+        <label for="username">Your Name</label>
         <input
-          type="url"
-          id="profileLink"
-          name="profileLink"
-          placeholder="https://www.nitrotype.com/racer/YourName"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your name"
           required
         />
 
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message here"
+          required
+        ></textarea>
+
         <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
 
-        <button type="submit" class="btn btn-primary">Submit Application</button>
+        <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
 
       <div id="form-message" role="alert" aria-live="polite" class="form-message"></div>
@@ -57,18 +75,20 @@
   <script>
     AOS.init();
 
-    const form = document.getElementById('join-form');
+    const form = document.getElementById('contact-form');
     const messageDiv = document.getElementById('form-message');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       messageDiv.textContent = '';
 
-      const profileLink = form.profileLink.value.trim();
+      const username = form.username.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
       const token = grecaptcha.getResponse();
 
-      if (!profileLink) {
-        messageDiv.textContent = 'Please enter your Nitro Type profile link.';
+      if (!username || !email || !message) {
+        messageDiv.textContent = 'Please fill in all fields.';
         return;
       }
       if (!token) {
@@ -80,13 +100,13 @@
         const response = await fetch(form.action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ profileLink, token }),
+          body: JSON.stringify({ username, email, message, token }),
         });
 
         const result = await response.json();
 
         if (result.success) {
-          messageDiv.textContent = 'Application submitted successfully! We will contact you soon.';
+          messageDiv.textContent = 'Message sent successfully! We will get back to you soon.';
           form.reset();
           grecaptcha.reset();
         } else {
