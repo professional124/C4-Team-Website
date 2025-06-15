@@ -3,6 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Us - Chill 4 Eva</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <!-- Navbar (same as index.html) -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">Chill 4 Eva</a>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html" class="active">Join Us</a></li>
+        <li><a href="rules.html">Team Rules</a></li>
+        <li><a href="tracker.html">Weekly Race Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+    </div>
+  </nav>
+
+  <main class="form-page">
+    <section class="form-container">
+      <h1>Join Chill 4 Eva</h1>
+      <form id="joinForm" action="https://c4-form-backend.onrender.com/api/join" method="POST">
+        <label for="profileLink">Nitro Type Profile Link</label>
+        <input
+          type="url"
+          id="profileLink"
+          name="profileLink"
+          placeholder="https://www.nitrotype.com/racer/yourname"
+          required
+        />
+
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+        <button type="submit" class="btn-submit">Submit Application</button>
+      </form>
+      <div id="joinMessage" class="form-message"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/darkmode.js"></script>
+  <script>
+    const joinForm = document.getElementById('joinForm');
+    const joinMessage = document.getElementById('joinMessage');
+
+    joinForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const token = grecaptcha.getResponse();
+      if (!token) {
+        joinMessage.textContent = 'Please complete the reCAPTCHA.';
+        joinMessage.style.color = 'red';
+        return;
+      }
+
+      const profileLink = joinForm.profileLink.value;
+
+      try {
+        const res = await fetch(joinForm.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, profileLink }),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          joinMessage.textContent = data.message;
+          joinMessage.style.color = 'green';
+          joinForm.reset();
+          grecaptcha.reset();
+        } else {
+          joinMessage.textContent = data.message || 'Submission failed, try again.';
+          joinMessage.style.color = 'red';
+          grecaptcha.reset();
+        }
+      } catch (error) {
+        joinMessage.textContent = 'Error submitting form. Please try again later.';
+        joinMessage.style.color = 'red';
+        grecaptcha.reset();
+      }
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join Chill 4 Eva</title>
   <style>
     body {
