@@ -8,51 +8,68 @@
   <script src="client.js" defer></script>
 
   <style>
-    /* Nav styles */
+    /* NAVBAR styles (same on all pages) */
     nav {
-      background-color: #222;
-      padding: 1rem 2rem;
+      background-color: #0d1117;
+      border-bottom: 2px solid #238636;
+      padding: 1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-family: 'Poppins', sans-serif;
     }
     nav .logo {
-      color: #00bcd4;
-      font-weight: bold;
-      font-size: 1.5rem;
+      color: #238636;
+      font-weight: 700;
+      font-size: 1.8rem;
       text-decoration: none;
+      letter-spacing: 1.2px;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       margin: 0;
       padding: 0;
     }
     nav ul li a {
-      color: #eee;
+      color: #c9d1d9;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
       transition: color 0.3s ease;
+      padding: 0.25rem 0;
+      border-bottom: 3px solid transparent;
     }
     nav ul li a:hover,
     nav ul li a.active {
-      color: #00bcd4;
+      color: #238636;
+      border-bottom: 3px solid #238636;
     }
     @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.5rem;
+      }
       nav ul {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 0.75rem;
+      }
+      nav ul li a {
+        font-size: 1.1rem;
       }
     }
 
     /* Page styles */
     body {
       font-family: Arial, sans-serif;
-      padding: 2rem;
       background: #121212;
       color: #eee;
       margin: 0;
+      padding: 2rem;
     }
     h1 {
       text-align: center;
@@ -64,7 +81,7 @@
       background: #222;
       padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+      box-shadow: 0 0 10px rgba(35, 134, 54, 0.4);
     }
     label {
       display: block;
@@ -79,7 +96,7 @@
       font-size: 1rem;
     }
     button {
-      background: #00bcd4;
+      background: #238636;
       color: #fff;
       border: none;
       padding: 0.75rem 1.5rem;
@@ -90,7 +107,7 @@
       transition: background 0.3s ease;
     }
     button:hover {
-      background: #0097a7;
+      background: #196c2f;
     }
     #join-message {
       margin-top: 1rem;
@@ -122,11 +139,11 @@
       placeholder="E.g. https://www.nitrotype.com/racer/sub2vyloqonyt"
       required
     />
-    
+
     <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
-    
+
     <button type="submit">Submit Application</button>
-    
+
     <div id="join-message"></div>
   </form>
 </body>
