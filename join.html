@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join Chill 4 Eva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Us - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/client.js"></script>
 </head>
 <body>
   <header>
@@ -15,29 +14,35 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="team-leaders.html">Team Leaders</a></li>
-          <li><a href="join.html" class="active">Join</a></li>
-          <li><a href="rules.html">Rules</a></li>
-          <li><a href="tracker.html">Tracker</a></li>
+          <li><a href="join.html" class="active">Join Us</a></li>
+          <li><a href="rules.html">Team Rules</a></li>
+          <li><a href="tracker.html">Race Tracker</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Join Chill 4 Eva</h2>
-      <p>Submit your racer profile link below to apply:</p>
-      <form action="https://formspree.io/f/xqabbqaw" method="POST">
-        <label for="racerLink">Nitro Type Racer Link:</label>
-        <input type="text" id="racerLink" name="racerLink" placeholder="https://www.nitrotype.com/racer/YourName" required />
-        <button type="submit">Apply Now</button>
-      </form>
-    </section>
-  </main>
+  <section class="container">
+    <h2>Apply to Join</h2>
+    <form action="#" method="POST">
+      <label for="username">Nitro Type Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="reason">Why do you want to join C4?</label>
+      <textarea id="reason" name="reason" rows="4"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
 
   <footer>
-    <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+    <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
+
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
