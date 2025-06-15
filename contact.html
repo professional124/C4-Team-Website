@@ -3,107 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - Chill 4 Eva</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Contact Us - Chill 4 Eva</title>
+  <link href="assets/css/style.css" rel="stylesheet" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <!-- Navbar (same as index.html) -->
   <nav class="navbar">
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-logo">Chill 4 Eva</a>
-      <ul class="navbar-menu">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">Chill 4 Eva</a>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="team-leaders.html">Team Leaders</a></li>
         <li><a href="join.html">Join Us</a></li>
-        <li><a href="rules.html">Team Rules</a></li>
+        <li><a href="rules.html">Rules</a></li>
         <li><a href="tracker.html">Weekly Race Tracker</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+      <button id="dark-mode-toggle" class="darkmode-btn" aria-label="Toggle Dark Mode">🌙</button>
     </div>
   </nav>
 
-  <main class="form-page">
-    <section class="form-container">
-      <h1>Contact Chill 4 Eva</h1>
-      <form id="contactForm" action="https://c4-form-backend.onrender.com/api/contact" method="POST">
-        <label for="username">Your Username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Your name"
-          required
-        />
+  <main class="container main-content">
+    <h1>Contact Chill 4 Eva</h1>
+    <p>Have questions or feedback? Send us a message!</p>
 
-        <label for="email">Your Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="your.email@example.com"
-          required
-        />
+    <form id="contact-form" class="form" action="https://c4-form-backend.onrender.com/api/contact" method="POST">
+      <label for="username">Your Name:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Your full name"
+        required
+        autocomplete="off"
+      />
 
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Write your message here..."
-          required
-        ></textarea>
+      <label for="email">Your Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="your.email@example.com"
+        required
+        autocomplete="off"
+      />
 
-        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Write your message here..."
+        required
+      ></textarea>
 
-        <button type="submit" class="btn-submit">Send Message</button>
-      </form>
-      <div id="contactMessage" class="form-message"></div>
-    </section>
+      <!-- reCAPTCHA widget -->
+      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+
+    <div id="contact-result" class="form-result"></div>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+  </footer>
 
   <script src="assets/js/darkmode.js"></script>
   <script>
-    const contactForm = document.getElementById('contactForm');
-    const contactMessage = document.getElementById('contactMessage');
+    const contactForm = document.getElementById('contact-form');
+    const contactResult = document.getElementById('contact-result');
 
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-
+      contactResult.textContent = '';
+      const username = contactForm.username.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
       const token = grecaptcha.getResponse();
+
       if (!token) {
-        contactMessage.textContent = 'Please complete the reCAPTCHA.';
-        contactMessage.style.color = 'red';
+        contactResult.textContent = 'Please complete the captcha verification.';
+        contactResult.style.color = 'red';
         return;
       }
-
-      const username = contactForm.username.value;
-      const email = contactForm.email.value;
-      const message = contactForm.message.value;
 
       try {
         const res = await fetch(contactForm.action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, username, email, message }),
+          body: JSON.stringify({ username, email, message, token }),
         });
-
         const data = await res.json();
-
         if (data.success) {
-          contactMessage.textContent = data.message;
-          contactMessage.style.color = 'green';
+          contactResult.textContent = 'Your message was sent successfully! Thank you.';
+          contactResult.style.color = 'green';
           contactForm.reset();
           grecaptcha.reset();
         } else {
-          contactMessage.textContent = data.message || 'Submission failed, try again.';
-          contactMessage.style.color = 'red';
+          contactResult.textContent = data.message || 'Failed to send message.';
+          contactResult.style.color = 'red';
           grecaptcha.reset();
         }
       } catch (error) {
-        contactMessage.textContent = 'Error sending message. Please try again later.';
-        contactMessage.style.color = 'red';
+        contactResult.textContent = 'An error occurred. Please try again later.';
+        contactResult.style.color = 'red';
         grecaptcha.reset();
       }
     });
