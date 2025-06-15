@@ -1,48 +1,35 @@
-// assets/js/main.js
+// main.js
+// This file contains all general JavaScript for the site
+// Dark mode toggle logic removed as requested
 
-// Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', () => {
-  if (AOS) {
-    AOS.init({
-      once: true, // animate only once when scrolling down
-      duration: 600,
-      easing: 'ease-in-out',
-    });
-  }
-
-  // Sticky header on scroll
+  // Sticky header functionality
   const header = document.querySelector('header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('sticky');
-      } else {
-        header.classList.remove('sticky');
-      }
+  const stickyOffset = header.offsetTop;
+
+  function handleScroll() {
+    if (window.pageYOffset > stickyOffset) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Optional: Form submission event handlers to validate and handle forms if needed
+  const joinForm = document.getElementById('join-form');
+  if (joinForm) {
+    joinForm.addEventListener('submit', (e) => {
+      // Example: Add any client-side validation here if needed
+      // For now, let default browser validation handle it
     });
   }
 
-  // Smooth scrolling for nav links
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  // Mobile menu toggle (optional)
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-links');
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('nav-open');
-      navToggle.classList.toggle('open');
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      // Example: Add any client-side validation here if needed
     });
   }
 });
