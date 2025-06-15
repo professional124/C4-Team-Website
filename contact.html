@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -23,39 +22,28 @@
   </nav>
 </header>
 
-<div class="announcement" data-aos="fade-down">
-  🚨 Weekly Comp Live: Earn $100k for every 100 races past 150! Stay sharp and race hard! 🚨
-</div>
-
 <section class="contact-section" data-aos="fade-up">
-  <h2>Contact Us</h2>
-  <p>Have questions? Reach out to us through this form or join our Discord.</p>
+  <h1>Contact Us</h1>
+  <p>Got questions, suggestions, or just want to say hi? Fill out the form below and we’ll get back to you as soon as possible.</p>
 
-  <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank" class="contact-form">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="entry.1234567890" placeholder="your.email@example.com" required />
-
-    <label for="message">Message</label>
-    <textarea id="message" name="entry.0987654321" rows="5" placeholder="Your message here..." required></textarea>
-
-    <button type="submit" class="btn">Send Message</button>
+  <!-- ✅ START FORM HERE -->
+  <form action="https://formspree.io/f/mrbkkpwl" method="POST" id="contact-form">
+    <input type="text" name="name" placeholder="Your name" required />
+    <input type="email" name="email" placeholder="Your email" required />
+    <textarea name="message" placeholder="Your message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
-
-  <div class="discord-info">
-    <h3>Join Our Discord</h3>
-    <p><a href="https://discord.gg/yourdiscordlink" target="_blank" rel="noopener">https://discord.gg/yourdiscordlink</a></p>
-  </div>
+  <!-- ✅ END FORM HERE -->
 </section>
 
 <footer>
-  <p>&copy; 2025 Chill 4 Eva [C4] Team | Designed for Nitro Type racers.</p>
+  <p>&copy; 2025 Chill 4 Eva [C4] Team | Powered by Nitro Type spirit.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+<script>AOS.init();</script>
 <script src="assets/js/darkmode.js"></script>
 <script src="assets/js/client.js"></script>
+
 </body>
 </html>
