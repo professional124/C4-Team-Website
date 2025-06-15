@@ -6,17 +6,95 @@
   <title>Contact Chill 4 Eva</title>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="client.js" defer></script>
+
   <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; background: #121212; color: #eee; }
-    form { max-width: 500px; margin: auto; background: #222; padding: 1.5rem; border-radius: 8px; }
-    label { display: block; margin-bottom: 0.5rem; }
-    input[type="text"], input[type="email"], textarea {
-      width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 4px; border: none; font-size: 1rem;
-      resize: vertical;
+    /* Nav styles */
+    nav {
+      background-color: #222;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    textarea { min-height: 120px; }
+    nav .logo {
+      color: #00bcd4;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #00bcd4;
+    }
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+
+    /* Page styles */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #121212;
+      color: #eee;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    form {
+      max-width: 450px;
+      margin: auto;
+      background: #222;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+      background: #333;
+      color: #eee;
+    }
+    textarea {
+      min-height: 100px;
+    }
     button {
-      background: #00bcd4; color: #fff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; cursor: pointer; border-radius: 4px;
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
       transition: background 0.3s ease;
     }
     button:hover {
@@ -31,14 +109,27 @@
   </style>
 </head>
 <body>
-  <h1 style="text-align:center;">Contact Chill 4 Eva</h1>
+  <nav>
+    <a href="index.html" class="logo">Chill 4 Eva</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team-leaders.html">Team Leaders</a></li>
+      <li><a href="join.html">Join Us</a></li>
+      <li><a href="rules.html">Team Rules</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h1>Contact Chill 4 Eva</h1>
   <form id="contact-form" novalidate>
+    <p>Questions, suggestions, or business? Reach out to us below!</p>
+
     <label for="username">Username</label>
     <input
       type="text"
       id="username"
       name="username"
-      placeholder="Your Nitro Type username"
+      placeholder="Your Nitro Type Username"
       required
     />
 
@@ -55,7 +146,7 @@
     <textarea
       id="message"
       name="message"
-      placeholder="Your message here..."
+      placeholder="Write your message here"
       required
     ></textarea>
 
