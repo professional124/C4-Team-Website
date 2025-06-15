@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join Us - Chill 4 Eva</title>
+  <title>Join Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <header>
@@ -25,15 +26,18 @@
 
   <section class="container">
     <h2>Join Chill 4 Eva</h2>
-    <form id="join-form">
-      <label for="profileLink">Nitro Type Racer Profile Link</label>
+    <form id="join-form" action="https://c4-form-backend.onrender.com/api/join" method="POST">
+      <label for="racerProfile">Nitro Type Racer Profile Link (required)</label>
       <input
         type="url"
-        id="profileLink"
-        name="profileLink"
+        id="racerProfile"
+        name="racerProfile"
         placeholder="E.g https://www.nitrotype.com/racer/sub2vyloqonyt"
         required
       />
+
+      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
@@ -42,7 +46,6 @@
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
 
-  <script src="https://www.google.com/recaptcha/api.js?render=6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></script>
   <script src="assets/js/client.js"></script>
 </body>
 </html>
