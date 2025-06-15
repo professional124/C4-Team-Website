@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join Chill 4 Eva</title>
+  <title>Chill 4 Eva - Join Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <header>
@@ -27,34 +28,71 @@
 
 <main class="container">
   <h1>Join Chill 4 Eva</h1>
-  <p>Want to race with C4? Submit your Nitro Type username below — make sure to follow the rules before applying.</p>
+  <p>Fill out the form below to apply to join our Nitro Type team!</p>
 
-  <form action="https://c4-form-backend.onrender.com/join" method="POST" class="join-form">
-    <label for="nt-user">Nitro Type Username</label>
-    <input
-      type="text"
-      id="nt-user"
-      name="username"
-      placeholder="E.g https://nitrotype.com/racer/sub2vyloqonyt"
-      required
-    />
+  <form id="join-form" action="https://c4-form-backend.onrender.com/api/join" method="POST">
+    <label for="profileLink">Nitro Type Profile Link:</label>
+    <input type="url" id="profileLink" name="profileLink" placeholder="https://www.nitrotype.com/racer/YourName" required />
 
-    <!-- CAPTCHA section handled by your backend -->
-    <div class="captcha-box">
-      <label for="captcha">Please verify you're human:</label>
-      <div>
-        <input type="checkbox" id="captcha" name="captcha" required />
-        <label for="captcha">I'm not a robot</label>
-      </div>
-    </div>
+    <!-- reCAPTCHA widget -->
+    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
 
-    <button type="submit" class="btn btn-primary">Apply Now</button>
+    <button type="submit">Submit</button>
   </form>
+
+  <div id="form-message" role="alert" style="margin-top: 1em;"></div>
 </main>
 
-<footer>
-  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
-</footer>
+<script>
+  const form = document.getElementById('join-form');
+  const messageBox = document.getElementById('form-message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    messageBox.textContent = '';
+
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+      messageBox.textContent = 'Please complete the reCAPTCHA.';
+      return;
+    }
+
+    const profileLink = form.profileLink.value.trim();
+
+    // Prepare payload
+    const payload = {
+      token: recaptchaResponse,
+      profileLink,
+    };
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        messageBox.style.color = 'green';
+        messageBox.textContent = 'Application submitted successfully! Thank you.';
+        form.reset();
+        grecaptcha.reset();
+      } else {
+        messageBox.style.color = 'red';
+        messageBox.textContent = data.message || 'Submission failed. Try again.';
+        grecaptcha.reset();
+      }
+    } catch (err) {
+      messageBox.style.color = 'red';
+      messageBox.textContent = 'Error submitting form. Please try again later.';
+      grecaptcha.reset();
+      console.error(err);
+    }
+  });
+</script>
+
 <script src="assets/js/darkmode.js"></script>
+<script src="assets/js/client.js"></script>
 </body>
 </html>
