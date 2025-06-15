@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact Us - Chill 4 Eva Nitro Type</title>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Chill 4 Eva</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/client.js"></script>
 </head>
 <body>
-<header>
-  <div class="container navbar">
-    <div class="logo">Chill 4 Eva</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="team-leaders.html">Team Leaders</a></li>
-        <li><a href="join.html">Join Us</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="tracker.html">Race Tracker</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
-  </div>
-</header>
-
-<main>
-  <section class="container mt-2" aria-label="Contact form and info">
-    <h2>Contact Chill 4 Eva</h2>
-    <p class="text-center">Have questions or want to get in touch? Fill out the form or use the info below.</p>
-    <form action="#" method="POST" novalidate>
-      <label for="name-contact">Name</label>
-      <input type="text" id="name-contact" name="name" placeholder="Your name" required />
-
-      <label for="email-contact">Email</label>
-      <input type="email" id="email-contact" name="email" placeholder="your.email@example.com" required />
-
-      <label for="message-contact">Message</label>
-      <textarea id="message-contact" name="message" rows="5" placeholder="Your message here..." required></textarea>
-
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-    <div class="mt-2 text-center">
-      <p><strong>Email:</strong> chill4eva@example.com</p>
-      <p><strong>Discord:</strong> Chill4Eva#1234</p>
-      <p><strong>Discord Server:</strong> <a href="https://discord.gg/example" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color)">Join us on Discord</a></p>
+  <header>
+    <div class="container navbar">
+      <div class="logo">C4</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="team-leaders.html">Team Leaders</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="tracker.html">Tracker</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p class="text-center">
+      Have questions or feedback? Reach out to Chill 4 Eva Nitro Type Team below.
+    </p>
+
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
   </section>
-</main>
 
-<footer>
-  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
-</footer>
-
-<script src="assets/js/darkmode.js"></script>
-<script src="assets/js/client.js"></script>
+  <footer>
+    &copy; 2025 Chill 4 Eva Nitro Type Team
+  </footer>
 </body>
 </html>
