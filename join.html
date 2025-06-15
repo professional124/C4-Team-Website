@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chill 4 Eva | Join Us</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Join Us - Chill 4 Eva Nitro Type Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo">[C4] Chill 4 Eva</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join</a>
-      <a href="rules.html">Rules</a>
-      <a href="tracker.html">Tracker</a>
-      <a href="contact.html">Contact</a>
+<header>
+  <div class="container navbar">
+    <div class="logo">Chill 4 Eva</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html" class="active">Join Us</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="tracker.html">Race Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-  </header>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
+</header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Join Chill 4 Eva</h1>
-    <p>Ready to race with one of Nitro Type's fastest teams?</p>
-  </section>
+<main>
+  <section class="container mt-2" aria-label="Join the team form">
+    <h2>Join Chill 4 Eva</h2>
+    <p class="text-center">Fill out the form below to apply to join our Nitro Type team.</p>
+    <form id="join-form" action="#" method="POST" novalidate>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
 
-  <section class="features" data-aos="fade-up">
-    <h2>Apply Below</h2>
-    <form action="https://formspree.io/f/xqabbqaw" method="POST" class="styled-form">
-      <label for="racer">Your Nitro Type Profile Link:</label>
-      <input type="url" name="racer" id="racer" required placeholder="https://www.nitrotype.com/racer/your_username" />
-      <button type="submit" class="btn">Apply Now</button>
+      <label for="racer_link">Nitro Type Racer Link *</label>
+      <input type="text" id="racer_link" name="racer_link" placeholder="https://www.nitrotype.com/racer/yourname" required />
+
+      <label for="discord">Discord (optional)</label>
+      <input type="text" id="discord" name="discord" placeholder="Discord username#1234" />
+
+      <button type="submit" class="btn btn-primary">Submit Application</button>
     </form>
   </section>
+</main>
 
-  <footer>
-    <p>&copy; 2025 Chill 4 Eva [C4] Team | Join the Nitro Type elite.</p>
-  </footer>
+<footer>
+  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="assets/js/darkmode.js"></script>
-  <script src="assets/js/client.js"></script>
-  <script>AOS.init();</script>
+<script src="assets/js/darkmode.js"></script>
+<script src="assets/js/client.js"></script>
 </body>
 </html>
