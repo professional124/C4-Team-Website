@@ -3,105 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chill 4 Eva - Contact</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Contact Chill 4 Eva</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    form {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 10px #0af;
+    }
+    h1 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #0af;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #121212;
+      background-color: #0af;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #08c;
+    }
+    .status {
+      margin-top: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
+  <!-- Load Google reCAPTCHA v2 checkbox -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-<header>
-  <div class="container navbar">
-    <div class="logo">Chill 4 Eva</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="team-leaders.html">Team Leaders</a></li>
-        <li><a href="join.html">Join Us</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="tracker.html">Race Tracker</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
-  </div>
-</header>
+  <form id="contactForm" novalidate>
+    <h1>Contact Chill 4 Eva</h1>
 
-<main class="container">
-  <h1>Contact Chill 4 Eva</h1>
-  <p>Send us a message with any questions or feedback!</p>
+    <label for="username">Name</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Your Name"
+      required
+      minlength="2"
+    />
 
-  <form id="contact-form" action="https://c4-form-backend.onrender.com/api/contact" method="POST">
-    <label for="username">Your Username:</label>
-    <input type="text" id="username" name="username" required />
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="your.email@example.com"
+      required
+    />
 
-    <label for="email">Your Email:</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Write your message here..."
+      required
+      minlength="10"
+    ></textarea>
 
     <!-- reCAPTCHA widget -->
-    <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
 
     <button type="submit">Send Message</button>
+
+    <div class="status" id="statusMessage"></div>
   </form>
 
-  <div id="form-message" role="alert" style="margin-top: 1em;"></div>
-</main>
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusMessage = document.getElementById('statusMessage');
 
-<script>
-  const contactForm = document.getElementById('contact-form');
-  const messageBox = document.getElementById('form-message');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusMessage.textContent = '';
 
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    messageBox.textContent = '';
+      if (!form.checkValidity()) {
+        statusMessage.textContent = 'Please fill out all fields correctly.';
+        statusMessage.style.color = 'red';
+        return;
+      }
 
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-      messageBox.textContent = 'Please complete the reCAPTCHA.';
-      return;
-    }
+      const username = form.username.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
 
-    const username = contactForm.username.value.trim();
-    const email = contactForm.email.value.trim();
-    const message = contactForm.message.value.trim();
+      const token = grecaptcha.getResponse();
+      if (!token) {
+        statusMessage.textContent = 'Please complete the reCAPTCHA.';
+        statusMessage.style.color = 'red';
+        return;
+      }
 
-    const payload = {
-      token: recaptchaResponse,
-      username,
-      email,
-      message,
-    };
+      const payload = { username, email, message, token };
 
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const data = await response.json();
+      try {
+        const res = await fetch('https://c4-form-backend.onrender.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
 
-      if (data.success) {
-        messageBox.style.color = 'green';
-        messageBox.textContent = 'Message sent successfully! Thank you.';
-        contactForm.reset();
-        grecaptcha.reset();
-      } else {
-        messageBox.style.color = 'red';
-        messageBox.textContent = data.message || 'Submission failed. Try again.';
+        const data = await res.json();
+
+        if (data.success) {
+          statusMessage.textContent = 'Thanks for your message!';
+          statusMessage.style.color = 'lightgreen';
+          form.reset();
+          grecaptcha.reset();
+        } else {
+          statusMessage.textContent = data.message || 'Submission failed.';
+          statusMessage.style.color = 'red';
+          grecaptcha.reset();
+        }
+      } catch (error) {
+        statusMessage.textContent = 'Server error. Please try again later.';
+        statusMessage.style.color = 'red';
         grecaptcha.reset();
       }
-    } catch (err) {
-      messageBox.style.color = 'red';
-      messageBox.textContent = 'Error sending message. Please try again later.';
-      grecaptcha.reset();
-      console.error(err);
-    }
-  });
-</script>
-
-<script src="assets/js/darkmode.js"></script>
-<script src="assets/js/client.js"></script>
+    });
+  </script>
 </body>
 </html>
