@@ -4,111 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us - Chill 4 Eva</title>
-  <link href="assets/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-logo">Chill 4 Eva</a>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Chill 4 Eva</a></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="team-leaders.html">Team Leaders</a></li>
         <li><a href="join.html">Join Us</a></li>
-        <li><a href="rules.html">Rules</a></li>
+        <li><a href="rules.html">Team Rules</a></li>
         <li><a href="tracker.html">Weekly Race Tracker</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <button id="dark-mode-toggle" class="darkmode-btn" aria-label="Toggle Dark Mode">🌙</button>
-    </div>
-  </nav>
+      <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    </nav>
+  </header>
 
-  <main class="container main-content">
-    <h1>Contact Chill 4 Eva</h1>
-    <p>Have questions or feedback? Send us a message!</p>
+  <main class="container" data-aos="fade-up">
+    <section class="form-section">
+      <h1>Contact Chill 4 Eva</h1>
+      <p>Send us a message and we will get back to you as soon as possible.</p>
 
-    <form id="contact-form" class="form" action="https://c4-form-backend.onrender.com/api/contact" method="POST">
-      <label for="username">Your Name:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="Your full name"
-        required
-        autocomplete="off"
-      />
+      <form id="contact-form" method="POST" action="https://c4-form-backend.onrender.com/api/contact" class="form" novalidate>
+        <label for="username">Your Name</label>
+        <input type="text" id="username" name="username" placeholder="Your name" required />
 
-      <label for="email">Your Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="your.email@example.com"
-        required
-        autocomplete="off"
-      />
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
-      <label for="message">Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        placeholder="Write your message here..."
-        required
-      ></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-      <!-- reCAPTCHA widget -->
-      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+        <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
 
-      <button type="submit" class="btn-submit">Send Message</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
 
-    <div id="contact-result" class="form-result"></div>
+      <div id="form-message" role="alert" aria-live="polite"></div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+  <footer>
+    <p>© 2025 Chill 4 Eva Nitro Type Team</p>
   </footer>
 
   <script src="assets/js/darkmode.js"></script>
+  <script src="assets/js/aos.js"></script>
   <script>
-    const contactForm = document.getElementById('contact-form');
-    const contactResult = document.getElementById('contact-result');
+    AOS.init();
 
-    contactForm.addEventListener('submit', async (e) => {
+    const form = document.getElementById('contact-form');
+    const messageDiv = document.getElementById('form-message');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      contactResult.textContent = '';
-      const username = contactForm.username.value.trim();
-      const email = contactForm.email.value.trim();
-      const message = contactForm.message.value.trim();
+      messageDiv.textContent = '';
+
+      const username = form.username.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
       const token = grecaptcha.getResponse();
 
+      if (!username || !email || !message) {
+        messageDiv.textContent = 'Please fill out all fields.';
+        return;
+      }
       if (!token) {
-        contactResult.textContent = 'Please complete the captcha verification.';
-        contactResult.style.color = 'red';
+        messageDiv.textContent = 'Please complete the CAPTCHA.';
         return;
       }
 
       try {
-        const res = await fetch(contactForm.action, {
+        const response = await fetch(form.action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, email, message, token }),
         });
-        const data = await res.json();
-        if (data.success) {
-          contactResult.textContent = 'Your message was sent successfully! Thank you.';
-          contactResult.style.color = 'green';
-          contactForm.reset();
+
+        const result = await response.json();
+
+        if (result.success) {
+          messageDiv.textContent = 'Message sent successfully! We will reply soon.';
+          form.reset();
           grecaptcha.reset();
         } else {
-          contactResult.textContent = data.message || 'Failed to send message.';
-          contactResult.style.color = 'red';
+          messageDiv.textContent = 'Submission failed: ' + (result.message || 'Please try again.');
           grecaptcha.reset();
         }
       } catch (error) {
-        contactResult.textContent = 'An error occurred. Please try again later.';
-        contactResult.style.color = 'red';
+        messageDiv.textContent = 'An error occurred. Please try again later.';
         grecaptcha.reset();
       }
     });
