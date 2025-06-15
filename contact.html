@@ -4,66 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Chill 4 Eva</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="client.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #121212; color: #eee; }
+    form { max-width: 500px; margin: auto; background: #222; padding: 1.5rem; border-radius: 8px; }
+    label { display: block; margin-bottom: 0.5rem; }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 4px; border: none; font-size: 1rem;
+      resize: vertical;
+    }
+    textarea { min-height: 120px; }
+    button {
+      background: #00bcd4; color: #fff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; cursor: pointer; border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0097a7;
+    }
+    #contact-message {
+      margin-top: 1rem;
+      min-height: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container navbar">
-      <div class="logo">C4</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="team-leaders.html">Team Leaders</a></li>
-          <li><a href="join.html">Join Us</a></li>
-          <li><a href="rules.html">Team Rules</a></li>
-          <li><a href="tracker.html">Race Tracker</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <h1 style="text-align:center;">Contact Chill 4 Eva</h1>
+  <form id="contact-form" novalidate>
+    <label for="username">Username</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Your Nitro Type username"
+      required
+    />
 
-  <section class="container">
-    <h2>Questions, suggestions, or business? Reach out to us below!</h2>
-    <form id="contact-form" action="https://c4-form-backend.onrender.com/api/contact" method="POST">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="Your Nitro Type Username"
-        required
-      />
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="you@example.com"
+      required
+    />
 
-      <label for="email">Email Address</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-      />
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Your message here..."
+      required
+    ></textarea>
 
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Write your message here..."
-        rows="5"
-        required
-      ></textarea>
+    <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
 
-      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+    <button type="submit">Send Message</button>
 
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
-  </footer>
-
-  <script src="assets/js/client.js"></script>
+    <div id="contact-message"></div>
+  </form>
 </body>
 </html>
