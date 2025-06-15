@@ -4,147 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join Chill 4 Eva</title>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="client.js" defer></script>
-
-  <style>
-    /* NAVBAR styles (same on all pages) */
-    nav {
-      background-color: #0d1117;
-      border-bottom: 2px solid #238636;
-      padding: 1rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav .logo {
-      color: #238636;
-      font-weight: 700;
-      font-size: 1.8rem;
-      text-decoration: none;
-      letter-spacing: 1.2px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li a {
-      color: #c9d1d9;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-      padding: 0.25rem 0;
-      border-bottom: 3px solid transparent;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #238636;
-      border-bottom: 3px solid #238636;
-    }
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 1.5rem;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        margin-top: 0.75rem;
-      }
-      nav ul li a {
-        font-size: 1.1rem;
-      }
-    }
-
-    /* Page styles */
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #eee;
-      margin: 0;
-      padding: 2rem;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    form {
-      max-width: 400px;
-      margin: auto;
-      background: #222;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(35, 134, 54, 0.4);
-    }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      border: none;
-      font-size: 1rem;
-    }
-    button {
-      background: #238636;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      width: 100%;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #196c2f;
-    }
-    #join-message {
-      margin-top: 1rem;
-      min-height: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="logo">Chill 4 Eva</a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team-leaders.html">Team Leaders</a></li>
-      <li><a href="join.html" class="active">Join Us</a></li>
-      <li><a href="rules.html">Team Rules</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<header>
+  <div class="container navbar">
+    <div class="logo">Chill 4 Eva</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team-leaders.html">Team Leaders</a></li>
+        <li><a href="join.html" class="active">Join Us</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="tracker.html">Race Tracker</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="dark-mode-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+  </div>
+</header>
 
-  <h1>Join Chill 4 Eva Nitro Type Team</h1>
-  <form id="join-form" novalidate>
-    <label for="racerProfile">Nitro Type Racer Profile Link</label>
-    <input
-      type="text"
-      id="racerProfile"
-      name="racerProfile"
-      placeholder="E.g. https://www.nitrotype.com/racer/sub2vyloqonyt"
-      required
-    />
+<main class="container">
+  <h1>Join Chill 4 Eva</h1>
+  <p>To join Chill 4 Eva, simply follow the instructions below. We accept active, friendly, and competitive racers!</p>
 
-    <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+  <form action="#" method="POST">
+    <label for="username">Nitro Type Username:</label>
+    <input type="text" id="username" name="username" required>
 
-    <button type="submit">Submit Application</button>
+    <label for="races">Average Weekly Races:</label>
+    <input type="number" id="races" name="races" required>
 
-    <div id="join-message"></div>
+    <label for="message">Why do you want to join?</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit" class="btn">Submit Application</button>
   </form>
+</main>
+
+<footer>
+  <p>© 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+</footer>
+<script src="assets/js/darkmode.js"></script>
 </body>
 </html>
