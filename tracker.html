@@ -2,45 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chill 4 Eva | Weekly Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Race Tracker - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+  <script defer src="assets/js/client.js"></script>
 </head>
 <body>
-  <header class="main-header">
-    <div class="logo">[C4] Chill 4 Eva</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="team-leaders.html">Team Leaders</a>
-      <a href="join.html">Join</a>
-      <a href="rules.html">Rules</a>
-      <a href="tracker.html">Tracker</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header>
+    <div class="container navbar">
+      <div class="logo">C4</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="team-leaders.html">Team Leaders</a></li>
+          <li><a href="join.html">Join Us</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="tracker.html" class="active">Tracker</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Weekly Race Tracker</h1>
-    <p>Track your progress and compete for weekly rewards!</p>
-  </section>
+  <section class="container">
+    <h2>Weekly Race Tracker</h2>
+    <p class="text-center">
+      Track your weekly race progress here. Payments are made every Friday based on races completed.
+    </p>
 
-  <section class="features" data-aos="fade-up">
-    <h2>This Week's Stats</h2>
-    <div class="stat-boxes">
-      <p>Updating soon... Stay tuned!</p>
-    </div>
+    <!-- Placeholder table for race stats -->
+    <table style="width:100%; border-collapse: collapse; color: var(--text-color-light);">
+      <thead>
+        <tr style="border-bottom: 2px solid var(--team-color);">
+          <th style="padding: 10px;">Racer</th>
+          <th style="padding: 10px;">Races This Week</th>
+          <th style="padding: 10px;">Payment Earned</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 8px;">ShadowReaper123</td>
+          <td style="padding: 8px; text-align:center;">180</td>
+          <td style="padding: 8px; text-align:center;">$300,000 NTC</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;">SpeedQueen</td>
+          <td style="padding: 8px; text-align:center;">210</td>
+          <td style="padding: 8px; text-align:center;">$350,000 NTC</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <footer>
-    <p>&copy; 2025 Chill 4 Eva [C4] Team | Built for Nitro Type racers.</p>
+    &copy; 2025 Chill 4 Eva Nitro Type Team
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="assets/js/darkmode.js"></script>
-  <script src="assets/js/client.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>
