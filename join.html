@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function validateRecaptcha(event) {
+      const response = grecaptcha.getResponse();
+      if (!response) {
+        alert("Please complete the CAPTCHA.");
+        event.preventDefault();
+        return false;
+      }
+      return true;
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -26,21 +36,19 @@
 
   <section class="container">
     <h2>Join Chill 4 Eva</h2>
-    <form action="https://formsubmit.co/ethan.j.del5@outlook.com" method="POST" class="form">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_subject" value="New Join Request - Chill 4 Eva">
-
-      <label for="username">Nitro Type Profile Link</label>
-      <input type="url" id="username" name="Profile Link" placeholder="E.g https://www.nitrotype.com/racer/sub2vyloqonyt" required>
-
+    <form onsubmit="return validateRecaptcha(event)" action="https://formsubmit.co/f/xqabbqaw" method="POST" class="form">
+      <label for="profileLink">Nitro Type Racer Profile Link</label>
+      <input type="url" id="profileLink" name="Profile Link" placeholder="E.g https://www.nitrotype.com/racer/sub2vyloqonyt" required />
       <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
-
-      <button type="submit" class="btn btn-primary">Request to Join</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="assets/js/client.js"></script>
 </body>
 </html>
