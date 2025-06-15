@@ -1,6 +1,0 @@
-services:
-  - type: static
-    name: C4-Team-Website
-    env: static
-    buildCommand: ""
-    staticPublishPath: ./
