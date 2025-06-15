@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Chill 4 Eva</title>
+  <title>Contact - Chill 4 Eva</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <header>
@@ -25,33 +26,18 @@
 
   <section class="container">
     <h2>Questions, suggestions, or business? Reach out to us below!</h2>
-    <form action="https://formspree.io/f/xqabbqaw" method="POST">
+    <form action="https://formsubmit.co/ethan.j.del5@outlook.com" method="POST" class="form">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Contact Message - Chill 4 Eva">
+
       <label for="username">Your Nitro Type Username</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        required
-        placeholder="e.g. Sub2VyloqOnYT"
-      />
+      <input type="text" id="username" name="Username" placeholder="e.g. Sub2VyloqOnYT" required>
 
       <label for="email">Email Address</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="you@example.com"
-      />
+      <input type="email" id="email" name="Email" placeholder="you@example.com" required>
 
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        required
-        placeholder="Your message..."
-      ></textarea>
+      <label for="message">Your Message</label>
+      <textarea id="message" name="Message" rows="5" required></textarea>
 
       <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
 
@@ -62,8 +48,5 @@
   <footer>
     <p>&copy; 2025 Chill 4 Eva. All rights reserved.</p>
   </footer>
-
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="assets/js/client.js"></script>
 </body>
 </html>
