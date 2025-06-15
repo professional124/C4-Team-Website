@@ -4,230 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join Us - Chill 4 Eva</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="assets/css/style.css" rel="stylesheet" />
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <!-- Navbar (same as index.html) -->
   <nav class="navbar">
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-logo">Chill 4 Eva</a>
-      <ul class="navbar-menu">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">Chill 4 Eva</a>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="team-leaders.html">Team Leaders</a></li>
         <li><a href="join.html" class="active">Join Us</a></li>
-        <li><a href="rules.html">Team Rules</a></li>
+        <li><a href="rules.html">Rules</a></li>
         <li><a href="tracker.html">Weekly Race Tracker</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+      <button id="dark-mode-toggle" class="darkmode-btn" aria-label="Toggle Dark Mode">🌙</button>
     </div>
   </nav>
 
-  <main class="form-page">
-    <section class="form-container">
-      <h1>Join Chill 4 Eva</h1>
-      <form id="joinForm" action="https://c4-form-backend.onrender.com/api/join" method="POST">
-        <label for="profileLink">Nitro Type Profile Link</label>
-        <input
-          type="url"
-          id="profileLink"
-          name="profileLink"
-          placeholder="https://www.nitrotype.com/racer/yourname"
-          required
-        />
+  <main class="container main-content">
+    <h1>Join Chill 4 Eva</h1>
+    <p>Fill out the form below to apply for our Nitro Type team!</p>
 
-        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+    <form id="join-form" class="form" action="https://c4-form-backend.onrender.com/api/join" method="POST">
+      <label for="profileLink">Your Nitro Type Profile Link:</label>
+      <input
+        type="url"
+        id="profileLink"
+        name="profileLink"
+        placeholder="https://www.nitrotype.com/racer/yourusername"
+        required
+        autocomplete="off"
+      />
 
-        <button type="submit" class="btn-submit">Submit Application</button>
-      </form>
-      <div id="joinMessage" class="form-message"></div>
-    </section>
+      <!-- reCAPTCHA widget -->
+      <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
+
+      <button type="submit" class="btn-submit">Submit Application</button>
+    </form>
+
+    <div id="join-result" class="form-result"></div>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Chill 4 Eva Nitro Type Team. All rights reserved.</p>
+  </footer>
 
   <script src="assets/js/darkmode.js"></script>
   <script>
-    const joinForm = document.getElementById('joinForm');
-    const joinMessage = document.getElementById('joinMessage');
+    const joinForm = document.getElementById('join-form');
+    const joinResult = document.getElementById('join-result');
 
     joinForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-
+      joinResult.textContent = '';
+      const profileLink = joinForm.profileLink.value.trim();
       const token = grecaptcha.getResponse();
+
       if (!token) {
-        joinMessage.textContent = 'Please complete the reCAPTCHA.';
-        joinMessage.style.color = 'red';
+        joinResult.textContent = 'Please complete the captcha verification.';
+        joinResult.style.color = 'red';
         return;
       }
-
-      const profileLink = joinForm.profileLink.value;
 
       try {
         const res = await fetch(joinForm.action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, profileLink }),
+          body: JSON.stringify({ profileLink, token }),
         });
-
         const data = await res.json();
-
         if (data.success) {
-          joinMessage.textContent = data.message;
-          joinMessage.style.color = 'green';
+          joinResult.textContent = 'Your application was submitted successfully! Thank you.';
+          joinResult.style.color = 'green';
           joinForm.reset();
           grecaptcha.reset();
         } else {
-          joinMessage.textContent = data.message || 'Submission failed, try again.';
-          joinMessage.style.color = 'red';
+          joinResult.textContent = data.message || 'Failed to submit application.';
+          joinResult.style.color = 'red';
           grecaptcha.reset();
         }
       } catch (error) {
-        joinMessage.textContent = 'Error submitting form. Please try again later.';
-        joinMessage.style.color = 'red';
-        grecaptcha.reset();
-      }
-    });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join Chill 4 Eva</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 1rem;
-    }
-    form {
-      background: #1e1e1e;
-      padding: 2rem;
-      border-radius: 8px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 0 10px #0af;
-    }
-    h1 {
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: #0af;
-      text-align: center;
-    }
-    label {
-      display: block;
-      margin: 1rem 0 0.5rem;
-      font-weight: 500;
-    }
-    input[type="url"] {
-      width: 100%;
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: none;
-      font-size: 1rem;
-    }
-    button {
-      margin-top: 1.5rem;
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #121212;
-      background-color: #0af;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #08c;
-    }
-    .status {
-      margin-top: 1rem;
-      font-weight: 600;
-      text-align: center;
-    }
-  </style>
-  <!-- Load Google reCAPTCHA v2 checkbox -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body>
-  <form id="joinForm" novalidate>
-    <h1>Join Chill 4 Eva</h1>
-    <label for="profileLink">Your Nitro Type Profile Link</label>
-    <input
-      type="url"
-      id="profileLink"
-      name="profileLink"
-      placeholder="https://www.nitrotype.com/username"
-      required
-      pattern="https?://.+"
-    />
-    <!-- reCAPTCHA widget -->
-    <div class="g-recaptcha" data-sitekey="6LeWhmErAAAAAMHNcFq-vmAaAPBWN1c69Ts2iKQ0"></div>
-    <button type="submit">Submit</button>
-    <div class="status" id="statusMessage"></div>
-  </form>
-
-  <script>
-    const form = document.getElementById('joinForm');
-    const statusMessage = document.getElementById('statusMessage');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusMessage.textContent = '';
-      
-      // Validate form
-      if (!form.checkValidity()) {
-        statusMessage.textContent = 'Please enter a valid profile link.';
-        statusMessage.style.color = 'red';
-        return;
-      }
-
-      // Get the profile link
-      const profileLink = form.profileLink.value.trim();
-
-      // Get reCAPTCHA response token
-      const token = grecaptcha.getResponse();
-      if (!token) {
-        statusMessage.textContent = 'Please complete the reCAPTCHA.';
-        statusMessage.style.color = 'red';
-        return;
-      }
-
-      // Prepare payload
-      const payload = { profileLink, token };
-
-      try {
-        const res = await fetch('https://c4-form-backend.onrender.com/api/join', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-
-        const data = await res.json();
-
-        if (data.success) {
-          statusMessage.textContent = 'Thank you! Your join request has been submitted.';
-          statusMessage.style.color = 'lightgreen';
-          form.reset();
-          grecaptcha.reset();
-        } else {
-          statusMessage.textContent = data.message || 'Submission failed.';
-          statusMessage.style.color = 'red';
-          grecaptcha.reset();
-        }
-      } catch (error) {
-        statusMessage.textContent = 'Server error. Please try again later.';
-        statusMessage.style.color = 'red';
+        joinResult.textContent = 'An error occurred. Please try again later.';
+        joinResult.style.color = 'red';
         grecaptcha.reset();
       }
     });
