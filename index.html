@@ -1,14 +1,16 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chill 4 Ever | C4</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/images/favicon/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official Chill 4 Ever Nitrotype Team Website - Join, View Rules, Contact, and Track Progress." />
+  <title>Chill 4 Ever | C4 Nitrotype Team</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon/favicon.png" type="image/png" />
+  <script defer src="assets/js/client.js"></script>
 </head>
 <body>
+  <!-- Navigation -->
   <header class="navbar">
     <div class="logo">C4 | Chill 4 Ever</div>
     <nav>
@@ -23,21 +25,38 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <video autoplay loop muted class="background-video">
-      <source src="assets/videos/typing.mp4" type="video/mp4">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/videos/typing-background.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
     </video>
     <div class="hero-content">
       <h1>Welcome to Chill 4 Ever</h1>
-      <p class="tagline">Speed. Skill. Style. Join C4 Today.</p>
-      <a href="join.html"><button class="join-button">Join the Team</button></a>
+      <p class="slogan">Type Fast. Stay Chill. Rule Nitrotype.</p>
+      <a href="join.html" class="join-btn">Join the Team</a>
     </div>
   </section>
 
+  <!-- Stats / Features -->
+  <section class="features">
+    <div class="feature-box">
+      <h2 class="counter" data-target="150">0</h2>
+      <p>Minimum Weekly Races</p>
+    </div>
+    <div class="feature-box">
+      <h2 class="counter" data-target="6">0</h2>
+      <p>Active Team Leaders</p>
+    </div>
+    <div class="feature-box">
+      <h2 class="counter" data-target="100000000">0</h2>
+      <p>NT$ Given in Comps</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Chill 4 Ever. All rights reserved.</p>
   </footer>
-
-  <script src="assets/js/client.js"></script>
 </body>
 </html>
