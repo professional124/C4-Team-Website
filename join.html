@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join Chill 4 Ever</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Join Chill 4 Ever Nitrotype Team Today!" />
+  <title>Join Chill 4 Ever | Nitrotype Team</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon/favicon.png" type="image/png" />
   <script defer src="assets/js/client.js"></script>
 </head>
 <body>
@@ -17,18 +19,33 @@
       <a href="team-leaders.html">Team Leaders</a>
       <a href="tracker.html">Tracker</a>
       <a href="contact.html">Contact</a>
+      <a href="https://discord.gg/your-discord-link" target="_blank">Discord</a>
+      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
     </nav>
   </header>
 
-  <section class="form-section">
-    <h1>Join the Team</h1>
-    <form id="joinForm">
-      <label for="ntlink">Your Nitrotype Racer Link</label>
-      <input type="url" id="ntlink" name="ntlink" placeholder="E.g. https://nitrotype.com/racer/yourname" required>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+  <main class="page-content">
+    <section class="join-section">
+      <h1>Join Chill 4 Ever</h1>
+      <p>We’re stoked you want to join! Fill out the application form below and become part of our chill, competitive Nitrotype family.</p>
 
-  <footer><p>&copy; 2025 Chill 4 Ever</p></footer>
+      <form class="join-form" id="joinForm" action="#" method="POST">
+        <label for="username">Nitrotype Username</label>
+        <input type="text" id="username" name="username" required placeholder="Your Nitrotype Username" />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Your email" />
+
+        <label for="whyJoin">Why do you want to join Chill 4 Ever?</label>
+        <textarea id="whyJoin" name="whyJoin" rows="5" required placeholder="Tell us why!"></textarea>
+
+        <button type="submit" class="join-btn">Submit Application</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Chill 4 Ever. All rights reserved.</p>
+  </footer>
 </body>
 </html>
