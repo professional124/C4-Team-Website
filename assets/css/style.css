@@ -1,185 +1,112 @@
-/* === General Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  background-color: #0b0f1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0f7fa;
   scroll-behavior: smooth;
 }
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0e0e0e;
-  color: #f0f0f0;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* === Navbar === */
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: #020617;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   z-index: 1000;
-  backdrop-filter: blur(10px);
 }
-
-.navbar .logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #00ffe7;
-}
-
 .navbar nav a {
-  color: #ccc;
+  color: #38f6f3;
+  margin: 0 1rem;
   text-decoration: none;
-  margin: 0 10px;
   transition: color 0.3s ease;
 }
-
-.navbar nav a:hover {
-  color: #00ffe7;
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #64ffda;
 }
-
-/* === Hero Section === */
-.hero {
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #00ffff;
+}
+.hero-section {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  overflow: hidden;
+  color: #ffffff;
 }
-
-.background-video {
+#bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(0.4);
 }
-
 .hero-content {
-  z-index: 1;
-  color: #fff;
-  animation: fadeIn 2s ease;
+  z-index: 10;
 }
-
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #00ffe7;
 }
-
-.hero-content .tagline {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.slogan {
+  font-style: italic;
+  margin: 1rem 0;
 }
-
-.join-button {
-  padding: 0.75rem 2rem;
-  background: #00ffe7;
+.join-btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #00ffff;
   color: #000;
   border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
 }
-
-.join-button:hover {
-  transform: scale(1.05);
+.join-btn:hover {
+  background-color: #38f6f3;
 }
-
-/* === Sections === */
-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.rules-section ul {
-  list-style: square inside;
-  line-height: 2;
-}
-
-.leader-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+.features {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
   gap: 2rem;
   text-align: center;
 }
-
-.leader-card {
-  background: #1b1b1b;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 255, 231, 0.1);
-  transition: transform 0.3s ease;
+.feature-box h2 {
+  font-size: 2rem;
+  color: #64ffda;
 }
-
-.leader-card:hover {
-  transform: translateY(-5px);
-}
-
-.leader-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-
-/* === Forms === */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
+  padding: 2rem;
 }
-
 form input,
 form textarea {
-  padding: 0.75rem;
-  border-radius: 6px;
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
   border: none;
-  outline: none;
-  background: #111;
-  color: #fff;
-  border: 1px solid #00ffe7;
 }
-
 form button {
-  padding: 0.75rem;
-  background: #00ffe7;
-  color: #000;
+  background-color: #00ffff;
+  padding: 0.7rem 2rem;
   border: none;
-  font-weight: bold;
+  color: #000;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 5px;
 }
-
-form button:hover {
-  opacity: 0.9;
-}
-
-/* === Footer === */
 footer {
+  background: #020617;
   text-align: center;
   padding: 1rem;
-  color: #888;
-}
-
-/* === Animations === */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  margin-top: 2rem;
 }
