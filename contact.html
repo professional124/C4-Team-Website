@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Chill 4 Ever</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Chill 4 Ever Nitrotype Team" />
+  <title>Contact | Chill 4 Ever Nitrotype Team</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon/favicon.png" type="image/png" />
   <script defer src="assets/js/client.js"></script>
 </head>
 <body>
@@ -17,20 +19,33 @@
       <a href="team-leaders.html">Team Leaders</a>
       <a href="tracker.html">Tracker</a>
       <a href="contact.html" class="active">Contact</a>
+      <a href="https://discord.gg/your-discord-link" target="_blank">Discord</a>
+      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
     </nav>
   </header>
 
-  <section class="form-section">
-    <h1>Contact Us</h1>
-    <form id="contactForm">
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+  <main class="page-content">
+    <section class="contact-section">
+      <h1>Contact Us</h1>
+      <p>Have questions or want to get in touch? Fill out the form below or reach out on Discord.</p>
 
-  <footer><p>&copy; 2025 Chill 4 Ever</p></footer>
+      <form class="contact-form" id="contactForm" action="#" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="Your email" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here"></textarea>
+
+        <button type="submit" class="join-btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Chill 4 Ever. All rights reserved.</p>
+  </footer>
 </body>
 </html>
