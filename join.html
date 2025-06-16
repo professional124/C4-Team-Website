@@ -1,28 +1,39 @@
+<!-- join.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join Chill 4 Ever</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join | Chill 4 Ever</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">C4 - Chill 4 Ever</div>
+    <div class="logo">C4 | Chill 4 Ever</div>
     <nav>
-      <!-- same nav as before -->
+      <a href="index.html">Home</a>
+      <a href="join.html" class="active">Join</a>
+      <a href="rules.html">Rules</a>
+      <a href="team-leaders.html">Team Leaders</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://discord.gg/your-discord-link" target="_blank">Discord</a>
+      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
     </nav>
   </header>
 
-  <section class="form-section">
-    <h2>Join Our Team</h2>
-    <p>Link your Nitrotype racer to apply:</p>
-    <form id="joinForm">
-      <input type="url" name="nt_link" placeholder="E.g. https://nitrotype.com/racer/sub2vyloqonyt" required />
+  <section>
+    <h2>Join Chill 4 Ever</h2>
+    <p>Link your NitroType account to request to join:</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="url" name="nt-profile" placeholder="E.g. https://nitrotype.com/racer/sub2vyloqonyt" required>
       <button type="submit">Submit</button>
     </form>
   </section>
 
+  <footer>
+    <p>&copy; 2025 Chill 4 Ever. All rights reserved.</p>
+  </footer>
   <script src="assets/js/client.js"></script>
 </body>
 </html>
